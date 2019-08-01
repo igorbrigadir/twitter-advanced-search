@@ -102,7 +102,7 @@ Reading Twitter Documentation and help docs from as many sources as possible - e
 
 ### Known Unknowns and Assumptions:
 
-I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:unk` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
+I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:und` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
 
 It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches.
 
@@ -175,5 +175,3 @@ From TweetDeck dropdown menu:
 `lang:zh` Chinese (中文)
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
-
-`lang:und` for Tweets where Twitter wasn't able to determine a language.
