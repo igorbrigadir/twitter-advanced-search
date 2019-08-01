@@ -31,7 +31,8 @@ Time  | since:yyyy-mm-dd | On or after a specified date
   | max_id:tweet_id | Snowflake ID based for exact time search (milli_second_epoch - 1288834974657) << 22 
   | min_id:tweet_id | Does not work together with max_id
   |   |  
-Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button.
+Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
+  | include:nativeretweets | Native retweets are excluded per default. This shows them.  
   | filter:retweets | Old style retweets ("RT") + quoted tweets.
   | filter:replies | Tweet is a reply to another Tweet.
   | filter:quote | Contain Quote Tweets 
@@ -174,3 +175,5 @@ From TweetDeck dropdown menu:
 `lang:zh` Chinese (中文)
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
+
+`lang:und` for Tweets where Twitter wasn't able to determine a language.
