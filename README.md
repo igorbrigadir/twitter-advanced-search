@@ -31,7 +31,8 @@ Time  | since:yyyy-mm-dd | On or after a specified date
   | max_id:tweet_id | Snowflake ID based for exact time search (milli_second_epoch - 1288834974657) << 22 
   | min_id:tweet_id | Does not work together with max_id
   |   |  
-Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button.
+Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
+  | include:nativeretweets | Native retweets are excluded per default. This shows them.  
   | filter:retweets | Old style retweets ("RT") + quoted tweets.
   | filter:replies | Tweet is a reply to another Tweet.
   | filter:quote | Contain Quote Tweets 
@@ -58,6 +59,7 @@ More Filters | filter:follows | Only from accounts you follow
   | filter:mentions | Containing `@mentions`
   | filter:news | Containing link to a news story. Combine with a list operator to narrow the user set down further.
   | filter:safe | Excluding NSFW content.
+  | filter:hashtags | Only Tweets with Hashtags.
   |   |  
 App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client)
   | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
@@ -101,7 +103,7 @@ Reading Twitter Documentation and help docs from as many sources as possible - e
 
 ### Known Unknowns and Assumptions:
 
-I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:unk` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
+I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:und` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
 
 It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches.
 
