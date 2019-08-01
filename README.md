@@ -4,7 +4,7 @@
 
 These operators work on Web, Mobile, Tweetdeck.
 
-Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features), @lucahammer [Guide](https://freshvanroot.com/blog/2019/twitter-search-guide-by-luca/), and Twitter / Tweetdeck itself. Contributions / tests, examples welcome!
+Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features), @lucahammer [Guide](https://freshvanroot.com/blog/2019/twitter-search-guide-by-luca/), @eevee [Twitter Manual](https://eev.ee/blog/2016/02/20/twitters-missing-manual/), @pushshift and Twitter / Tweetdeck itself. Contributions / tests, examples welcome!
 
 Class | Operator | Finds Tweets…
 -- | -- | --
@@ -25,14 +25,15 @@ Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
   |   |  
 Geo | near:city | Geotagged in this place
   | within:radius | Within specific radius of the "near" operator, to apply a limit. Can use km or mi. e.g. "fire near:san-francisco within:10km"
-  | | geocode:latitude,longitude,radius | E.g., to get tweets 10km around twitters head quarter, use geocode:37.7764685,-122.4172004,10km
+  | geocode:lat,long,radius | E.g., to get tweets 10km around twitters hq, use geocode:37.7764685,-122.4172004,10km
   |   |  
 Time  | since:yyyy-mm-dd | On or after a specified date
   | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
   | max_id:tweet_id | Snowflake ID based for exact time search (milli_second_epoch - 1288834974657) << 22 
   | min_id:tweet_id | Does not work together with max_id
   |   |  
-Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button.
+Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
+  | include:nativeretweets | Native retweets are excluded per default. This shows them.  
   | filter:retweets | Old style retweets ("RT") + quoted tweets.
   | filter:replies | Tweet is a reply to another Tweet.
   | filter:quote | Contain Quote Tweets 
@@ -59,9 +60,9 @@ More Filters | filter:follows | Only from accounts you follow
   | filter:mentions | Containing `@mentions`
   | filter:news | Containing link to a news story. Combine with a list operator to narrow the user set down further.
   | filter:safe | Excluding NSFW content.
-  | | filter:verified | Get only tweets from verified accounts
+  | filter:hashtags | Only Tweets with Hashtags.
   |   |  
-App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client)
+App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client) `twitter_ads` doesn't work on it's own, but does with another operator.
   | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
   | card_name:audio | Tweets with a Player Card (Links to Audio sources, Spotify, Soundcloud etc.)
   | card_name:animated_gif | Tweets With GIFs
@@ -103,9 +104,9 @@ Reading Twitter Documentation and help docs from as many sources as possible - e
 
 ### Known Unknowns and Assumptions:
 
-I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:unk` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
+I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:und` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
 
-It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches.
+It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches. Tweets composed in Twitter Ads are available with `source:twitter_ads` but other promoted tweets may not have been created with that app.
 
 I'd also like to search for Collections (Timelines) and Moments, but this seems to work ok with just `url:` searches. eg: `url:twitter.com/i/events` and `url:twitter.com/i/moments` (I think the difference is events are curated?) but `url:twitter.com url:timelines` has many false positives.
 
@@ -176,3 +177,15 @@ From TweetDeck dropdown menu:
 `lang:zh` Chinese (中文)
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
+
+### Longer List of common clients:
+`source:` doesn't seem to work for any API client, these are the valid, indexed ones i could find:
+
+`twitter_web_client`,
+`twitter_for_iphone`,
+`twitter_for_android`,
+`tweetdeck`, 
+`facebook`, 
+`instagram`,
+`twitterfeed`,
+`cloudhopper` (tweets via sms service)
