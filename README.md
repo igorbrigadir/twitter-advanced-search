@@ -59,6 +59,7 @@ More Filters | filter:follows | Only from accounts you follow
   | filter:mentions | Containing `@mentions`
   | filter:news | Containing link to a news story. Combine with a list operator to narrow the user set down further.
   | filter:safe | Excluding NSFW content.
+  | filter:hashtags | Only Tweets with Hashtags.
   |   |  
 App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client)
   | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
