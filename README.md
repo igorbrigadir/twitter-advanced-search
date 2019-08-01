@@ -25,7 +25,7 @@ Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
   |   |  
 Geo | near:city | Geotagged in this place
   | within:radius | Within specific radius of the "near" operator, to apply a limit. Can use km or mi. e.g. "fire near:san-francisco within:10km"
-  | geocode:latitude,longitude,radius | E.g., to get tweets 10km around twitters head quarter, use geocode:37.7764685,-122.4172004,10km
+  | | geocode:latitude,longitude,radius | E.g., to get tweets 10km around twitters head quarter, use geocode:37.7764685,-122.4172004,10km
   |   |  
 Time  | since:yyyy-mm-dd | On or after a specified date
   | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
@@ -59,6 +59,7 @@ More Filters | filter:follows | Only from accounts you follow
   | filter:mentions | Containing `@mentions`
   | filter:news | Containing link to a news story. Combine with a list operator to narrow the user set down further.
   | filter:safe | Excluding NSFW content.
+  | | filter:verified | Get only tweets from verified accounts
   |   |  
 App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client)
   | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
