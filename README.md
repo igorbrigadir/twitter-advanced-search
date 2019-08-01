@@ -115,6 +115,9 @@ I'd also like to search for Collections (Timelines) and Moments, but this seems 
 
 From TweetDeck dropdown menu:
 
+<details><summary>All Languages</summary>
+<p>
+
 `lang:am` Amharic (አማርኛ)
 `lang:ar` Arabic (العربية)
 `lang:bg` Bulgarian (Български)
@@ -175,6 +178,9 @@ From TweetDeck dropdown menu:
 `lang:ur` Urdu (ﺍﺭﺩﻭ)
 `lang:vi` Vietnamese (Tiếng Việt)
 `lang:zh` Chinese (中文)
+
+</p>
+</details>
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
 
