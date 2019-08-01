@@ -61,7 +61,7 @@ More Filters | filter:follows | Only from accounts you follow
   | filter:safe | Excluding NSFW content.
   | filter:hashtags | Only Tweets with Hashtags.
   |   |  
-App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client)
+App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client) `twitter_ads` doesn't work on it's own, but does with another operator.
   | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
   | card_name:audio | Tweets with a Player Card (Links to Audio sources, Spotify, Soundcloud etc.)
   | card_name:animated_gif | Tweets With GIFs
@@ -105,7 +105,7 @@ Reading Twitter Documentation and help docs from as many sources as possible - e
 
 I have no idea how Twitter decides what should match `filter:news`, my guess is that it's based on a list of whitelisted domain names, as tweets from anyone can appear as long as they link to a news site, no idea if this list is public. No idea if or how this filter changed over time. But we can try to retrieve tweets and see. `lang:und` will match most empty tweets or tweets with a single number or link. `filter:safe` presumably uses the User setting "Contains Sensitive Content" - but may also apply to specific tweets somehow.
 
-It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches.
+It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches. Tweets composed in Twitter Ads are available with `source:twitter_ads` but other promoted tweets may not have been created with that app.
 
 I'd also like to search for Collections (Timelines) and Moments, but this seems to work ok with just `url:` searches. eg: `url:twitter.com/i/events` and `url:twitter.com/i/moments` (I think the difference is events are curated?) but `url:twitter.com url:timelines` has many false positives.
 
