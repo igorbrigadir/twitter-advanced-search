@@ -176,3 +176,15 @@ From TweetDeck dropdown menu:
 `lang:zh` Chinese (中文)
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
+
+### Longer List of common clients:
+`source:` doesn't seem to work for any API client, these are the valid, indexed ones i could find:
+
+`twitter_web_client`,
+`twitter_for_iphone`,
+`twitter_for_android`,
+`tweetdeck`, 
+`facebook`, 
+`instagram`,
+`twitterfeed`,
+`cloudhopper` (tweets via sms service)
