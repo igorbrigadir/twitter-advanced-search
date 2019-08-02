@@ -26,6 +26,7 @@ Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
 Geo | near:city | Geotagged in this place
   | within:radius | Within specific radius of the "near" operator, to apply a limit. Can use km or mi. e.g. "fire near:san-francisco within:10km"
   | geocode:lat,long,radius | E.g., to get tweets 10km around twitters hq, use geocode:37.7764685,-122.4172004,10km
+  | place:96683cc9126741d1 | Search tweets by [Place Object](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html#place) ID 
   |   |  
 Time  | since:yyyy-mm-dd | On or after a specified date
   | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
