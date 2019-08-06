@@ -77,7 +77,7 @@ App specific | source:client_name | Sent from a specified client e.g. source:twe
 
 # Building Queries
 
-Any "`filter:type`" can also be negated using the "`-`" symbol.
+Any "`filter:type`" can also be negated using the "`-`" symbol. `exclude:links` is the same as `-filter:links`
 
 Example: I want Tweets from @Nasa with all types of media except images
 
