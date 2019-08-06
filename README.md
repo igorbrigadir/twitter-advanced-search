@@ -15,7 +15,7 @@ Tweet content | love hatelove AND hate(love hate) | Containing both "love" and "
   | $twtr | A cashtag, useful for following stock information
   | "love hate" | The complete phrase "love hate"
   | traffic ? | Question marks are matched
-  | :) OR :( | Emoticons are matched, positive [:) :-) :P :D] or negative [:( :-(]
+  | :) OR :( | Emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(`
   | url:google.com | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well.
   |   |  
 Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
