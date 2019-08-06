@@ -15,6 +15,7 @@ Tweet content | love hatelove AND hate(love hate) | Containing both "love" and "
   | $twtr | A cashtag, useful for following stock information
   | "love hate" | The complete phrase "love hate"
   | traffic ? | Question marks are matched
+  | :) OR :( | Emoticons are matched, positive [:) :-) :P :D] or negative [:( :-(]
   | url:google.com | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well.
   |   |  
 Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
@@ -91,6 +92,9 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 
 `space (big OR large) list:nasa/astronauts (source:twitter_for_iphone OR source:twitter_web_client) filter:images since:2011-01-01 -#asteroid`
 
+To find any quote tweets of a tweet, search for the tweet permalink, or the tweet ID with `url`:
+
+`https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`
 # Note:
 
 There are a bunch of operators that can be used in Web search that are either not implemented in the UI or are described in API docs instead of Search help pages, or are only documented for Tweetdeck, but work on the website and mobile too. This is a collection of all the operators I could find, as well as how to go about finding these in the first place.
@@ -185,7 +189,7 @@ From TweetDeck dropdown menu:
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
 
-### Longer List of common clients:
+### Longer List of useful or common clients:
 `source:` doesn't seem to work for any API client, these are the valid, indexed ones i could find:
 
 `twitter_web_client`,
@@ -196,3 +200,5 @@ Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching
 `instagram`,
 `twitterfeed`,
 `cloudhopper` (tweets via sms service)
+`tweetbot.net`
+`IFTTT`
