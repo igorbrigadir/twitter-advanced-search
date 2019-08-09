@@ -140,6 +140,11 @@ def convert_milliepoch_to_tweet_id(milliepoch):
 
 Unfortunately, remember that JavaScript does not support 64bit integers, so these calculations and other operations on IDs often fail in unexpected ways.
 
+## Quote-Tweets
+From a technical perspective Quote-Tweets are Tweets with a URL of another Tweet. It's possible to find Tweets that quote a specific Tweet by searching for the URL of that Tweet. Any parameters need to be removed or only Tweets that contain the parameter as well are found. Twitter appends a Client-parameter when copying Tweet URLs through the sharing menu. Eg. ```?s=20``` for the Web App and ```?s=09``` for the Android app. Example: ```twitter.com/jack/status/20/ -from:jack```
+
+To find all Tweets that quote a specific user, you search for the first part of the Tweet-URL and exclude Tweets from the user: ```twitter.com/jack/status/ -from:jack```.
+
 ### How did I find these in the first place?
 
 Reading Twitter Documentation and help docs from as many sources as possible - eg: Developer Documentation, Help pages, Tool-specific help pages, eg: Tweetdeck help etc. Using Share feature on tweetdeck to copy the search string. Searching google and pastebin and github for rarely documented ones together to find other lists of operators others have compiled.
