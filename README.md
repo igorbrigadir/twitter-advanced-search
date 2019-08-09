@@ -137,9 +137,16 @@ Unfortunately, remember that JavaScript does not support 64bit integers, so thes
 More details on snowflake can be found in @pushshift document [here](https://docs.google.com/document/d/1xVrPoNutyqTdQ04DXBEZW4ZW4A5RAQW2he7qIpTmG-M/).
 
 ### Quote-Tweets
+
 From a technical perspective Quote-Tweets are Tweets with a URL of another Tweet. It's possible to find Tweets that quote a specific Tweet by searching for the URL of that Tweet. Any parameters need to be removed or only Tweets that contain the parameter as well are found. Twitter appends a Client-parameter when copying Tweet URLs through the sharing menu. Eg. ```?s=20``` for the Web App and ```?s=09``` for the Android app. Example: ```twitter.com/jack/status/20/ -from:jack```
 
 To find all Tweets that quote a specific user, you search for the first part of the Tweet-URL and exclude Tweets from the user: ```twitter.com/jack/status/ -from:jack```.
+
+### Geo Searches
+
+Very few tweets have exact geo coordinates. Exact Geo coordinates are phased out for normal tweets, but will remain for photos: https://twitter.com/TwitterSupport/status/1141039841993355264
+
+Tweets instead can be tagged by [Place](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html#place)
 
 ### How did I find these in the first place?
 
@@ -152,7 +159,6 @@ I have no idea how Twitter decides what should match `filter:news`, my guess is 
 It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches. Tweets composed in Twitter Ads are available with `source:twitter_ads` but other promoted tweets may not have been created with that app.
 
 I'd also like to search for Collections (Timelines) and Moments, but this seems to work ok with just `url:` searches. eg: `url:twitter.com/i/events` and `url:twitter.com/i/moments` (I think the difference is events are curated?) but `url:twitter.com url:timelines` has many false positives.
-
 
 ### Supported Languages:
 
