@@ -17,6 +17,7 @@ Tweet content | love hatelove AND hate(love hate) | Containing both "love" and "
   | traffic ? | Question marks are matched
   | :) OR :( | Emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(`
   | url:google.com | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well.
+  | lang:en | Search for tweets in specified language, see [list](#supported-languages) below.
   |   |  
 Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
   | to:user | Replying to a particular @username
@@ -153,7 +154,7 @@ It would be great to be able to reliably find Promoted tweets - this may be poss
 I'd also like to search for Collections (Timelines) and Moments, but this seems to work ok with just `url:` searches. eg: `url:twitter.com/i/events` and `url:twitter.com/i/moments` (I think the difference is events are curated?) but `url:twitter.com url:timelines` has many false positives.
 
 
-### Full List of supported languages:
+### Supported Languages:
 
 From TweetDeck dropdown menu:
 
