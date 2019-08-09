@@ -32,7 +32,7 @@ Geo | near:city | Geotagged in this place
   |   |  
 Time  | since:yyyy-mm-dd | On or after a specified date
   | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
-  | max_id:tweet_id | Snowflake ID based for exact time search (milli_second_epoch - 1288834974657) << 22 
+  | max_id:tweet_id | Snowflake ID based for exact time search (see Note below) 
   | min_id:tweet_id | Does not work together with max_id
   |   |  
 Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
@@ -96,13 +96,49 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 To find any quote tweets of a tweet, search for the tweet permalink, or the tweet ID with `url`:
 
 `https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`
+
 # Note:
 
 There are a bunch of operators that can be used in Web search that are either not implemented in the UI or are described in API docs instead of Search help pages, or are only documented for Tweetdeck, but work on the website and mobile too. This is a collection of all the operators I could find, as well as how to go about finding these in the first place.
 
 Web, Mobile, Tweetdeck Search are one thing, Standard API Search is another, Premium Search and Enterprise Search is a third, separate thing based on Gnip products. API docs already exist for the API and Premium but i might add those separately later.
 
-There are multiple systems, and not all of them support the same queries. 
+There are multiple systems, and not all of them support the same queries.
+
+## Snowflake IDs:
+
+All user, tweet, DM, and some other object IDs are snowflake IDs on twitter since `2010-06-01` and `2013-01-22` for user IDs. In short, each ID embeds a timestamp in it.
+
+To use these with `min_id` / `max_id` as time delimiters, either pick a tweet ID that roughly has a `created_at` time you need, remembering that all times on twitter are UTC, or use the following (This works for all tweets after Snowflake was implemented):
+
+To convert a Twitter ID to microsecond epoch:
+
+`(tweet_id >> 22) + 1288834974657` -- This gives the millisecond epoch of when the tweet or user was created.
+
+Convert from epoch back to a tweet id:
+
+`(millisecond_epoch - 1288834974657) << 22 = tweet id`
+
+Here's a use case:
+
+You want to start gathering all tweets for specific search terms starting at a specific time. Let's say this time in `August 4, 2019 09:00:00 UTC`. You can use the `max_id` parameter by first converting the millisecond epoch time to a tweet id. You can use https://www.epochconverter.com.
+
+`August 4, 2019 09:00:00 UTC` = `1564909200000` (epoch milliseconds)
+
+`(1564909200000 - 1288834974657) << 22 = 1157939227653046272` (tweet id)
+
+So if you set max_id to `1157939227653046272`, you will start collecting tweets earlier than that datetime. This can be extremely helpful when you need to get a very specific portion of the timeline.
+
+Here's a quick Python function:
+
+```python
+def convert_milliepoch_to_tweet_id(milliepoch):
+    if milliepoch <= 1288834974657:
+        raise ValueError("Date is too early (before snowflake implementation)")
+    return (milliepoch - 1288834974657) << 22
+```
+
+Unfortunately, remember that JavaScript does not support 64bit integers, so these calculations and other operations on IDs often fail in unexpected ways.
 
 ### How did I find these in the first place?
 
