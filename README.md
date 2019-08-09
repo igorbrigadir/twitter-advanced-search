@@ -32,7 +32,7 @@ Geo | near:city | Geotagged in this place
   |   |  
 Time  | since:yyyy-mm-dd | On or after a specified date
   | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
-  | max_id:tweet_id | Snowflake ID based for exact time search (see Note below) 
+  | max_id:tweet_id | Snowflake ID based for exact time search (see [Note](#snowflake-ids) below) 
   | min_id:tweet_id | Does not work together with max_id
   |   |  
 Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
@@ -65,7 +65,7 @@ More Filters | filter:follows | Only from accounts you follow
   | filter:safe | Excluding NSFW content.
   | filter:hashtags | Only Tweets with Hashtags.
   |   |  
-App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (common clients are: tweetdeck, twitter_for_iphone, twitter_for_android, twitter_web_client) `twitter_ads` doesn't work on it's own, but does with another operator.
+App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (See [Note](#common-clients) for common ones) `twitter_ads` doesn't work on it's own, but does with another operator.
   | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
   | card_name:audio | Tweets with a Player Card (Links to Audio sources, Spotify, Soundcloud etc.)
   | card_name:animated_gif | Tweets With GIFs
@@ -74,8 +74,7 @@ App specific | source:client_name | Sent from a specified client e.g. source:twe
   | card_name:summary_large_image | Only large image Cards
   | card_name:summary | Only Small image summary cards
 
-
-# Building Queries
+## Building Queries:
 
 Any "`filter:type`" can also be negated using the "`-`" symbol. `exclude:links` is the same as `-filter:links`
 
@@ -93,19 +92,13 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 
 `space (big OR large) list:nasa/astronauts (source:twitter_for_iphone OR source:twitter_web_client) filter:images since:2011-01-01 -#asteroid`
 
-To find any quote tweets of a tweet, search for the tweet permalink, or the tweet ID with `url`:
+To find any quote tweets, search for the tweet permalink, or the tweet ID with `url` eg: `https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`, see [note](#quote-tweets) for more.
 
-`https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`
+## Notes:
 
-# Note:
+Web, Mobile, Tweetdeck Search runs on one type of system (as far as i can tell), Standard API Search is a different index, Premium Search and Enterprise Search is another separate thing based on Gnip products. API docs already exist for the API and Premium but i might add guides for those separately.
 
-There are a bunch of operators that can be used in Web search that are either not implemented in the UI or are described in API docs instead of Search help pages, or are only documented for Tweetdeck, but work on the website and mobile too. This is a collection of all the operators I could find, as well as how to go about finding these in the first place.
-
-Web, Mobile, Tweetdeck Search are one thing, Standard API Search is another, Premium Search and Enterprise Search is a third, separate thing based on Gnip products. API docs already exist for the API and Premium but i might add those separately later.
-
-There are multiple systems, and not all of them support the same queries.
-
-## Snowflake IDs:
+### Snowflake IDs:
 
 All user, tweet, DM, and some other object IDs are snowflake IDs on twitter since `2010-06-01` and `2013-01-22` for user IDs. In short, each ID embeds a timestamp in it.
 
@@ -140,7 +133,9 @@ def convert_milliepoch_to_tweet_id(milliepoch):
 
 Unfortunately, remember that JavaScript does not support 64bit integers, so these calculations and other operations on IDs often fail in unexpected ways.
 
-## Quote-Tweets
+More details on snowflake can be found in @pushshift document [here](https://docs.google.com/document/d/1xVrPoNutyqTdQ04DXBEZW4ZW4A5RAQW2he7qIpTmG-M/).
+
+### Quote-Tweets
 From a technical perspective Quote-Tweets are Tweets with a URL of another Tweet. It's possible to find Tweets that quote a specific Tweet by searching for the URL of that Tweet. Any parameters need to be removed or only Tweets that contain the parameter as well are found. Twitter appends a Client-parameter when copying Tweet URLs through the sharing menu. Eg. ```?s=20``` for the Web App and ```?s=09``` for the Android app. Example: ```twitter.com/jack/status/20/ -from:jack```
 
 To find all Tweets that quote a specific user, you search for the first part of the Tweet-URL and exclude Tweets from the user: ```twitter.com/jack/status/ -from:jack```.
@@ -231,7 +226,7 @@ From TweetDeck dropdown menu:
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
 
-### Longer List of useful or common clients:
+### Common clients:
 `source:` doesn't seem to work for any API client, these are the valid, indexed ones i could find:
 
 `twitter_web_client`,
