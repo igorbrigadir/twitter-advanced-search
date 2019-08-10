@@ -100,6 +100,17 @@ On Web and mobile, keyword operators can match on: The user's name, the @ screen
 
 Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
+### Tweetdeck Equivalents:
+
+Tweetdeck options for columns have equivalents you can use on web search:
+
+Tweets with Images: `filter:images` 
+Videos: `filter:videos`
+Tweets with GIFs: `card_name:animated_gif` 
+"Tweets with broadcasts": `(card_domain:pscp.tv OR card_domain:periscope.tv OR "twitter.com/i/broadcasts/")`
+"Any Media" `(filter:images OR filter:videos)` 
+"Any Links (includes media)": `filter:links` 
+
 ## Notes:
 
 Web, Mobile, Tweetdeck Search runs on one type of system (as far as i can tell), Standard API Search is a different index, Premium Search and Enterprise Search is another separate thing based on Gnip products. API docs already exist for the API and Premium but i might add guides for those separately.
