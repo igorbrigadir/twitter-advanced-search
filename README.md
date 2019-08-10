@@ -16,6 +16,7 @@ Tweet content | love hatelove AND hate(love hate) | Containing both "love" and "
   | "love hate" | The complete phrase "love hate"
   | traffic ? | Question marks are matched
   | :) OR :( | Emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(`
+  | 👀 | Emoji searches are also matched
   | url:google.com | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well.
   | lang:en | Search for tweets in specified language, see [list](#supported-languages) below.
   |   |  
@@ -94,6 +95,10 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 `space (big OR large) list:nasa/astronauts (source:twitter_for_iphone OR source:twitter_web_client) filter:images since:2011-01-01 -#asteroid`
 
 To find any quote tweets, search for the tweet permalink, or the tweet ID with `url` eg: `https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`, see [note](#quote-tweets) for more.
+
+On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, url:trib.al finds accounts that use that shortener, even though the full url is displayed).
+
+Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
 ## Notes:
 
