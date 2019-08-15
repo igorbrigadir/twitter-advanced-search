@@ -100,6 +100,10 @@ On Web and mobile, keyword operators can match on: The user's name, the @ screen
 
 Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
+### Limitations:
+
+Known limitations: `card_name:` only works for the last 7-8 days.
+
 ### Tweetdeck Equivalents:
 
 Tweetdeck options for columns have equivalents you can use on web search:
