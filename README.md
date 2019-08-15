@@ -254,7 +254,8 @@ From TweetDeck dropdown menu:
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
 
 ### Common clients:
-`source:` doesn't seem to work for any API client, these are the valid, indexed ones i could find:
+
+`source:` should work for any API client, try putting the client name in quotes or replace spaces with underscores. This is the App name field that you can alter in the [developer app configuration page](https://developer.twitter.com/en/apps), so anyone can set anything here and appear to tweet from a made up client. You cannot copy an existing name. This operator needs to be combined with something else to work, eg: `lang:en` These are some common ones:
 
 `twitter_web_client`,
 `twitter_for_iphone`,
@@ -266,3 +267,8 @@ Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching
 `cloudhopper` (tweets via sms service)
 `tweetbot.net`
 `IFTTT`
+
+These are some notable, weird and wonderful ones:
+
+`source:"LG Smart Refrigerator"`
+`source:"GUCCI SmartToilet™"`
