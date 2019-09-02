@@ -35,7 +35,7 @@ Geo | near:city | Geotagged in this place
 Time  | since:yyyy-mm-dd | On or after a specified date
   | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
   | max_id:tweet_id | Snowflake ID based for exact time search (see [Note](#snowflake-ids) below) 
-  | min_id:tweet_id | Does not work together with max_id
+  | since_id:tweet_id | Work together with `max_id` and another operator
   |   |  
 Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
   | include:nativeretweets | Native retweets are excluded per default. This shows them.  
@@ -123,7 +123,7 @@ Web, Mobile, Tweetdeck Search runs on one type of system (as far as i can tell),
 
 All user, tweet, DM, and some other object IDs are snowflake IDs on twitter since `2010-06-01` and `2013-01-22` for user IDs. In short, each ID embeds a timestamp in it.
 
-To use these with `min_id` / `max_id` as time delimiters, either pick a tweet ID that roughly has a `created_at` time you need, remembering that all times on twitter are UTC, or use the following (This works for all tweets after Snowflake was implemented):
+To use these with `since_id` / `max_id` as time delimiters, either pick a tweet ID that roughly has a `created_at` time you need, remembering that all times on twitter are UTC, or use the following (This works for all tweets after Snowflake was implemented):
 
 To convert a Twitter ID to microsecond epoch:
 
