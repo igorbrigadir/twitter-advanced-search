@@ -42,6 +42,7 @@ Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retw
   | filter:retweets | Old style retweets ("RT") + quoted tweets.
   | filter:replies | Tweet is a reply to another Tweet.
   | filter:quote | Contain Quote Tweets 
+  | card_name:poll2choice_text_only | Tweets containing polls. poll3choice_text_only for polls with three choices and poll4choice_text_only for polls with four choices.
   |   |  
 Engagement  | min_retweets:5 | A minimum number of Retweets
   | min_faves:10 | A minimum number of Likes
