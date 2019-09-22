@@ -26,30 +26,30 @@ Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` |
   | `list:user/list-slug` | From members of this public List e.g. list:NASA/astronauts. Use the list slug (url part after `/lists/`) | [🔗](https://twitter.com/search?q=list%3ANASA%2Fastronauts&src=typed_query)
   | `filter:verified` | From verified users | [🔗](https://twitter.com/search?q=filter%3Averified&src=typed_query)
   |   |  
-Geo | near:city | Geotagged in this place
-  | near:me | Near where twitter thinks you are
-  | within:radius | Within specific radius of the "near" operator, to apply a limit. Can use km or mi. e.g. "fire near:san-francisco within:10km"
-  | geocode:lat,long,radius | E.g., to get tweets 10km around twitters hq, use geocode:37.7764685,-122.4172004,10km
-  | place:96683cc9126741d1 | Search tweets by [Place Object](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html#place) ID 
+Geo | `near:city` | Geotagged in this place. Also supports Phrases, eg: "The Hague" | [🔗](https://twitter.com/search?q=near%3A%22The%20Hague%22&src=typed_query)
+  | `near:me` | Near where twitter thinks you are | [🔗](https://twitter.com/search?q=near%3Ame&src=typed_query)
+  | `within:radius` | Within specific radius of the "near" operator, to apply a limit. Can use km or mi. e.g. `fire near:san-francisco within:10km` | [🔗](https://twitter.com/search?q=fire%20near%3Asan-francisco%20within%3A10km&src=typed_query)
+  | `geocode:lat,long,radius` | E.g., to get tweets 10km around twitters hq, use `geocode:37.7764685,-122.4172004,10km` | [🔗](https://twitter.com/search?q=geocode%3A37.7764685%2C-122.4172004%2C10km&src=typed_query)
+  | `place:96683cc9126741d1` | Search tweets by [Place Object](https://developer.twitter.com/en/docs/tweets/data-dictionary/overview/geo-objects.html#place) ID eg: USA Place ID is `96683cc9126741d1` | [🔗](https://twitter.com/search?q=place%3A96683cc9126741d1&src=typed_query)
   |   |  
-Time  | since:yyyy-mm-dd | On or after a specified date
-  | until:yyyy-mm-dd | On or before a specified date. Combine with the "since" operator for dates between.
-  | max_id:tweet_id | Snowflake ID based for exact time search (see [Note](#snowflake-ids) below) 
-  | since_id:tweet_id | Work together with `max_id` and another operator
+Time  | `since:yyyy-mm-dd` | On or after a specified date | [🔗](https://twitter.com/search?q=since%3A2019-06-12%20until%3A2019-06-28%20%23nasamoontunes&src=typed_query)
+  | `until:yyyy-mm-dd` | On or before a specified date. Combine with the "since" operator for dates between. | [🔗](https://twitter.com/search?q=since%3A2019-06-12%20until%3A2019-06-28%20%23nasamoontunes&src=typed_query)
+  | `max_id:tweet_id` | Snowflake ID based for exact time search (see [Note](#snowflake-ids) below) | [🔗](https://twitter.com/search?q=since_id%3A1138872932887924737%20max_id%3A1144730280353247233%20%23nasamoontunes&src=typed_query)
+  | `since_id:tweet_id` | Works together with `max_id` and another operator | [🔗](https://twitter.com/search?q=since_id%3A1138872932887924737%20max_id%3A1144730280353247233%20%23nasamoontunes&src=typed_query)
   |   |  
-Tweet Type  | filter:nativeretweets | Retweets from users who have hit the retweet button
-  | include:nativeretweets | Native retweets are excluded per default. This shows them.  
-  | filter:retweets | Old style retweets ("RT") + quoted tweets.
-  | filter:replies | Tweet is a reply to another Tweet.
-  | filter:quote | Contain Quote Tweets
-  | card_name:poll2choice_text_only | Tweets containing polls. poll3choice_text_only for polls with three choices and poll4choice_text_only for polls with four choices.
+Tweet Type  | `filter:nativeretweets` | Only retweets created using the retweet button. Works well combined with `from:` to show only retweets. | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Anativeretweets&src=typed_query)
+  | `include:nativeretweets` | Native retweets are excluded by default. This shows them. In contrast to `filter:`, which shows only retweets, this includes retweets in addition to other tweets | [🔗](https://twitter.com/search?q=from%3Anasa%20include%3Anativeretweets%20&src=typed_query)
+  | `filter:retweets` | Old style retweets ("RT") + quoted tweets. | [🔗](https://twitter.com/search?q=filter%3Aretweets%20from%3Atwitter%20until%3A2009-11-06%09&src=typed_query&f=live)
+  | `filter:replies` | Tweet is a reply to another Tweet. good for finding conversations, or threads if you add or remove `to:user` | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Areplies%20-to%3Anasa&src=typed_query)
+  | `filter:quote` | Contain Quote Tweets | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Aquote&src=typed_query)
+  | `card_name:poll2choice_text_only` | Tweets containing polls. `poll2choice_text_only` for polls containing two choices, `poll3choice_text_only` for polls with three choices and `poll4choice_text_only` for polls with four choices. | [🔗](https://twitter.com/search?q=card_name%3Apoll4choice_text_only&src=typed_query&f=live)
   |   |  
-Engagement  | min_retweets:5 | A minimum number of Retweets
-  | min_faves:10 | A minimum number of Likes
-  | min_replies:100 | A minimum number of replies
-  | -min_retweets:500 | A maximum number of Retweets
-  | -min_faves:1000 | A maximum number of Likes
-  | -min_replies:1000 | A maximum number of replies
+Engagement  | `min_retweets:5` | A minimum number of Retweets. Counts seem to be approximate for larger (1000+) values. | [🔗](https://twitter.com/search?q=min_retweets%3A5000%20nasa&src=typed_query)
+  | `min_faves:10` | A minimum number of Likes | [🔗](https://twitter.com/search?q=min_faves%3A10000%20nasa&src=typed_query)
+  | `min_replies:100` | A minimum number of replies | [🔗](https://twitter.com/search?q=min_replies%3A1000%20nasa&src=typed_query)
+  | `-min_retweets:500` | A maximum number of Retweets | [🔗](https://twitter.com/search?q=-min_retweets%3A500%20nasa&src=typed_query)
+  | `-min_faves:500` | A maximum number of Likes | [🔗](https://twitter.com/search?q=-min_faves%3A500%20nasa&src=typed_query)
+  | `-min_replies:100` | A maximum number of replies | [🔗](https://twitter.com/search?q=-min_replies%3A100%20nasa&src=typed_query)
   |   |  
 Media | filter:media | All media types.
   | filter:twimg | Native Twitter images (pic.twitter.com links)
