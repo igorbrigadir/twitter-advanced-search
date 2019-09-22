@@ -6,25 +6,25 @@ These operators work on Web, Mobile, Tweetdeck.
 
 Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features), @lucahammer [Guide](https://freshvanroot.com/blog/2019/twitter-search-guide-by-luca/), @eevee [Twitter Manual](https://eev.ee/blog/2016/02/20/twitters-missing-manual/), @pushshift and Twitter / Tweetdeck itself. Contributions / tests, examples welcome!
 
-Class | Operator | Finds Tweets…
--- | -- | --
-Tweet content | love hatelove AND hate(love hate) | Containing both "love" and "hate"
-  | love OR hate | At least one of either "love" or "hate"
-  | -love | Excluding "love"
-  | #tgif | A hashtag
-  | $twtr | A cashtag, useful for following stock information
-  | "love hate" | The complete phrase "love hate"
-  | traffic ? | Question marks are matched
-  | :) OR :( | Emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(`
-  | 👀 | Emoji searches are also matched
-  | url:google.com | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well.
-  | lang:en | Search for tweets in specified language, see [list](#supported-languages) below.
+Class | Operator | Finds Tweets… | Example
+-- | -- | -- | --
+Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa". Spaces are implicit AND. Brackets can be used to group individual words if using other operators. | [🔗](https://twitter.com/search?q=esa%20nasa&src=typed_query)
+  | `nasa OR esa` | Either "nasa" or "esa". OR must be in uppercase. | [🔗](https://twitter.com/search?q=nasa%20OR%20esa&src=typed_query)
+  | `"state of the art"` | The complete phrase "state of the art". Will also match "state-of-the-art" | [🔗](https://twitter.com/search?q=%22state%20of%20the%20art%22&src=typed_query)
+  | `-love` <br> `-"live laugh love"` | Excluding "love". Also applies to quoted phrases. 
+  | `#tgif` | A hashtag | [🔗](https://twitter.com/search?q=%23tgif&src=typed_query)
+  | `$TWTR` | A cashtag, like hashtags but for stock symbols | [🔗](https://twitter.com/search?q=%24TWTR%20OR%20%24FB%20OR%20%24AMZN%20OR%20%24AAPL%20OR%20%24NFLX%20OR%20%24GOOG&src=typed_query)
+  | `What ?` | Question marks are matched | [🔗](https://twitter.com/search?q=(Who%20OR%20What%20OR%20When%20OR%20Where%20OR%20Why%20OR%20How)%20%3F&src=typed_query)
+  | `:) OR :(` | Some emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(` | [🔗](https://twitter.com/search?q=%3A%29%20OR%20%3A-%29%20OR%20%3AP%20OR%20%3AD%20OR%20%3A%28%20OR%20%3A-%28&src=typed_query)
+  | 👀 | Emoji searches are also matched. Usually needs another operator to work. | [🔗](https://twitter.com/search?q=%F0%9F%91%80%20lang%3Aen&src=typed_query) 
+  | `url:google.com` | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well. Works for both shortened and canonical urls, eg: gu.com shortener for theguardian.com | [🔗](https://twitter.com/search?q=url%3Agu.com&src=typed_query) 
+  | `lang:en` | Search for tweets in specified language, see [list](#supported-languages) below. | [🔗](https://twitter.com/search?q=lang%3Aen&src=typed_query)
   |   |  
-Users | from:user | Sent by a particular @username e.g. "#space from:NASA"
-  | to:user | Replying to a particular @username
-  | "+@user" | Mentioning a particular @username e.g. "+@NASA"
-  | list:user/list-name | From members of this List e.g. list:NASA/space-tweets
-  | filter:verified | From verified users
+Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` | [🔗](https://twitter.com/search?q=dogs%20from%3Anasa&src=typed_query)
+  | `to:user` | Replying to a particular `@username` | [🔗](https://twitter.com/search?q=%23MoonTunes%20to%3Anasa&src=typed_query)
+  | `@user` | Mentioning a particular `@username`. Combine with `-from:username` to get only mentions | [🔗](https://twitter.com/search?q=%40cern%20-from%3Acern&src=typed_query)
+  | `list:user/list-slug` | From members of this public List e.g. list:NASA/astronauts. Use the list slug (url part after `/lists/`) | [🔗](https://twitter.com/search?q=list%3ANASA%2Fastronauts&src=typed_query)
+  | `filter:verified` | From verified users | [🔗](https://twitter.com/search?q=filter%3Averified&src=typed_query)
   |   |  
 Geo | near:city | Geotagged in this place
   | near:me | Near where twitter thinks you are
