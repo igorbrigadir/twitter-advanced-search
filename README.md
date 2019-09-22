@@ -11,7 +11,7 @@ Class | Operator | Finds Tweets… | Eg:
 Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa". Spaces are implicit AND. Brackets can be used to group individual words if using other operators. | [🔗](https://twitter.com/search?q=esa%20nasa&src=typed_query)
   | `nasa OR esa` | Either "nasa" or "esa". OR must be in uppercase. | [🔗](https://twitter.com/search?q=nasa%20OR%20esa&src=typed_query)
   | `"state of the art"` | The complete phrase "state of the art". Will also match "state-of-the-art" | [🔗](https://twitter.com/search?q=%22state%20of%20the%20art%22&src=typed_query)
-  | `-love` <br> `-"live laugh love"` | Excluding "love". Also applies to quoted phrases. 
+  | `-love` <br> `-"live laugh love"` | `-` is used for excluding "love". Also applies to quoted phrases and other operators. | [🔗](https://twitter.com/search?q=bears%20-chicagobears&src=typed_query)
   | `#tgif` | A hashtag | [🔗](https://twitter.com/search?q=%23tgif&src=typed_query)
   | `$TWTR` | A cashtag, like hashtags but for stock symbols | [🔗](https://twitter.com/search?q=%24TWTR%20OR%20%24FB%20OR%20%24AMZN%20OR%20%24AAPL%20OR%20%24NFLX%20OR%20%24GOOG&src=typed_query)
   | `What ?` | Question marks are matched | [🔗](https://twitter.com/search?q=(Who%20OR%20What%20OR%20When%20OR%20Where%20OR%20Why%20OR%20How)%20%3F&src=typed_query)
@@ -51,7 +51,7 @@ Engagement  | `min_retweets:5` | A minimum number of Retweets. Counts seem to b
   | `-min_faves:500` | A maximum number of Likes | [🔗](https://twitter.com/search?q=-min_faves%3A500%20nasa&src=typed_query)
   | `-min_replies:100` | A maximum number of replies | [🔗](https://twitter.com/search?q=-min_replies%3A100%20nasa&src=typed_query)
   |   |  
-Media | `filter:media` | All media types. | [](https://twitter.com/search?q=filter%3Amedia%20cat&src=typed_query)
+Media | `filter:media` | All media types. | [🔗](https://twitter.com/search?q=filter%3Amedia%20cat&src=typed_query)
   | `filter:twimg` | Native Twitter images (pic.twitter.com links) | [🔗](https://twitter.com/search?q=filter%3Atwimg%20cat&src=typed_query)
   | `filter:images` | All images. | [🔗](https://twitter.com/search?q=filter%3Aimages%20cat&src=typed_query)
   | `filter:videos` | All video types, including native Twitter video and external sources such as Youtube. | [🔗](https://twitter.com/search?q=filter%3Avideos%20cat&src=typed_query)
@@ -79,7 +79,11 @@ App specific | `source:client_name` | Sent from a specified client e.g. source:t
 
 ## Matching:
 
-On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, `url:trib.al` finds accounts that use that shortener, even though the full url is displayed). `-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art". Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized.
+On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, `url:trib.al` finds accounts that use that shortener, even though the full url is displayed).
+
+`-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art".
+
+Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized. Spelling correction appears sometimes, and also plurals are also matched, eg: `bears` will also match tweets with `bear`.
 
 Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
