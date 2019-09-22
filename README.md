@@ -54,7 +54,7 @@ Engagement  | min_retweets:5 | A minimum number of Retweets
 Media | filter:media | All media types.
   | filter:twimg | Native Twitter images (pic.twitter.com links)
   | filter:images | All images.
-  | filter:video | All video types, including native Twitter video and external sources such as Youtube.
+  | filter:videos | All video types, including native Twitter video and external sources such as Youtube.
   | filter:periscope | Periscopes
   | filter:native_video | All Twitter-owned video types (native video, vine, periscope)
   | filter:vine | Vines (RIP)
