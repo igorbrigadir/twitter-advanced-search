@@ -6,7 +6,7 @@ These operators work on Web, Mobile, Tweetdeck.
 
 Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features), @lucahammer [Guide](https://freshvanroot.com/blog/2019/twitter-search-guide-by-luca/), @eevee [Twitter Manual](https://eev.ee/blog/2016/02/20/twitters-missing-manual/), @pushshift and Twitter / Tweetdeck itself. Contributions / tests, examples welcome!
 
-Class | Operator | Finds Tweets… | Example
+Class | Operator | Finds Tweets… | Eg:
 -- | -- | -- | --
 Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa". Spaces are implicit AND. Brackets can be used to group individual words if using other operators. | [🔗](https://twitter.com/search?q=esa%20nasa&src=typed_query)
   | `nasa OR esa` | Either "nasa" or "esa". OR must be in uppercase. | [🔗](https://twitter.com/search?q=nasa%20OR%20esa&src=typed_query)
@@ -79,7 +79,7 @@ App specific | `source:client_name` | Sent from a specified client e.g. source:t
 
 ## Matching:
 
-On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, url:trib.al finds accounts that use that shortener, even though the full url is displayed). `-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art". Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized.
+On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, `url:trib.al` finds accounts that use that shortener, even though the full url is displayed). `-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art". Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized.
 
 Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
@@ -163,9 +163,9 @@ More details on snowflake can be found in @pushshift document [here](https://doc
 
 ### Quote-Tweets
 
-From a technical perspective Quote-Tweets are Tweets with a URL of another Tweet. It's possible to find Tweets that quote a specific Tweet by searching for the URL of that Tweet. Any parameters need to be removed or only Tweets that contain the parameter as well are found. Twitter appends a Client-parameter when copying Tweet URLs through the sharing menu. Eg. ```?s=20``` for the Web App and ```?s=09``` for the Android app. Example: ```twitter.com/jack/status/20/ -from:jack```
+From a technical perspective Quote-Tweets are Tweets with a URL of another Tweet. It's possible to find Tweets that quote a specific Tweet by searching for the URL of that Tweet. Any parameters need to be removed or only Tweets that contain the parameter as well are found. Twitter appends a Client-parameter when copying Tweet URLs through the sharing menu. Eg. `?s=20` for the Web App and `?s=09` for the Android app. Example: `twitter.com/jack/status/20/ -from:jack`
 
-To find all Tweets that quote a specific user, you search for the first part of the Tweet-URL and exclude Tweets from the user: ```twitter.com/jack/status/ -from:jack```.
+To find all Tweets that quote a specific user, you search for the first part of the Tweet-URL and exclude Tweets from the user: `twitter.com/jack/status/ -from:jack`.
 
 ### Geo Searches
 
@@ -262,16 +262,17 @@ Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching
 
 `source:` should work for any API client, try putting the client name in quotes or replace spaces with underscores. This is the App name field that you can alter in the [developer app configuration page](https://developer.twitter.com/en/apps), so anyone can set anything here and appear to tweet from a made up client. You cannot copy an existing name. This operator needs to be combined with something else to work, eg: `lang:en` These are some common ones:
 
-`twitter_web_client`,
-`twitter_for_iphone`,
-`twitter_for_android`,
+`twitter_web_client`, 
+`twitter_for_iphone`, 
+`twitter_for_android`, 
+`twitter_ads`
 `tweetdeck`, 
 `facebook`, 
-`instagram`,
-`twitterfeed`,
-`cloudhopper` (tweets via sms service)
-`tweetbot.net`
-`IFTTT`
+`instagram`, 
+`twitterfeed`, 
+`cloudhopper` (tweets via sms service), 
+`tweetbot.net`, 
+`IFTTT` 
 
 These are some notable, weird and wonderful ones:
 
