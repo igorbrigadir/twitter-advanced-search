@@ -51,31 +51,37 @@ Engagement  | `min_retweets:5` | A minimum number of Retweets. Counts seem to b
   | `-min_faves:500` | A maximum number of Likes | [🔗](https://twitter.com/search?q=-min_faves%3A500%20nasa&src=typed_query)
   | `-min_replies:100` | A maximum number of replies | [🔗](https://twitter.com/search?q=-min_replies%3A100%20nasa&src=typed_query)
   |   |  
-Media | filter:media | All media types.
-  | filter:twimg | Native Twitter images (pic.twitter.com links)
-  | filter:images | All images.
-  | filter:videos | All video types, including native Twitter video and external sources such as Youtube.
-  | filter:periscope | Periscopes
-  | filter:native_video | All Twitter-owned video types (native video, vine, periscope)
-  | filter:vine | Vines (RIP)
-  | filter:consumer_video | Twitter native video only
-  | filter:pro_video | Twitter pro video (Amplify) only
+Media | `filter:media` | All media types. | [](https://twitter.com/search?q=filter%3Amedia%20cat&src=typed_query)
+  | `filter:twimg` | Native Twitter images (pic.twitter.com links) | [🔗](https://twitter.com/search?q=filter%3Atwimg%20cat&src=typed_query)
+  | `filter:images` | All images. | [🔗](https://twitter.com/search?q=filter%3Aimages%20cat&src=typed_query)
+  | `filter:videos` | All video types, including native Twitter video and external sources such as Youtube. | [🔗](https://twitter.com/search?q=filter%3Avideos%20cat&src=typed_query)
+  | `filter:periscope` | Periscopes | [🔗](https://twitter.com/search?q=filter%3Aperiscope%20cat&src=typed_query)
+  | `filter:native_video` | All Twitter-owned video types (native video, vine, periscope) | [🔗](https://twitter.com/search?q=filter%3Anative_video%20cat&src=typed_query)
+  | `filter:vine` | Vines (RIP) | [🔗](https://twitter.com/search?q=filter%3Avine%20cat&src=typed_query)
+  | `filter:consumer_video` | Twitter native video only | [🔗](https://twitter.com/search?q=filter%3Aconsumer_video%20cat&src=typed_query)
+  | `filter:pro_video` | Twitter pro video (Amplify) only | [🔗](https://twitter.com/search?q=filter%3Apro_video%20cat&src=typed_query)
   |   |  
-More Filters | filter:follows | Only from accounts you follow
-  | filter:links | Only containing some URL
-  | filter:mentions | Containing `@mentions`
-  | filter:news | Containing link to a news story. Combine with a list operator to narrow the user set down further.
-  | filter:safe | Excluding NSFW content.
-  | filter:hashtags | Only Tweets with Hashtags.
+More Filters | `filter:follows` | Only from accounts you follow | [🔗](https://twitter.com/search?q=filter%3Afollows%20lang%3Aen&src=typed_query)
+  | `filter:links` | Only containing some URL, includes media. use -filter:media for urls that aren't media | [🔗](https://twitter.com/search?q=filter%3Afollows%20filter%3Alinks%20-filter%3Amedia&src=typed_query)
+  | `filter:mentions` | Containing any sort of `@mentions` | [🔗](https://twitter.com/search?q=filter%3Amentions%20from%3Atwitter%20-filter%3Areplies&src=typed_query)
+  | `filter:news` | Containing link to a news story. Combine with a list operator to narrow the user set down further. | [🔗](https://twitter.com/search?q=filter%3Anews%20lang%3Aen&src=typed_query)
+  | `filter:safe` | Excluding NSFW content. Excludes content that users have marked as "Potentially Sensitive". Doesn't always guarantee SFW results. | [🔗](https://twitter.com/search?q=filter%3Asafe%20%23followfriday&src=typed_query)
+  | `filter:hashtags` | Only Tweets with Hashtags. | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Ahashtags&src=typed_query)
   |   |  
-App specific | source:client_name | Sent from a specified client e.g. source:tweetdeck (See [Note](#common-clients) for common ones) `twitter_ads` doesn't work on it's own, but does with another operator.
-  | card_domain:pscp.tv | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links.
-  | card_name:audio | Tweets with a Player Card (Links to Audio sources, Spotify, Soundcloud etc.)
-  | card_name:animated_gif | Tweets With GIFs
-  | card_name:player | Tweets with a Platyer Card
-  | card_name:app | Tweets with links to an App Card
-  | card_name:summary_large_image | Only large image Cards
-  | card_name:summary | Only Small image summary cards
+App specific | `source:client_name` | Sent from a specified client e.g. source:tweetdeck (See [Note](#common-clients) for common ones) eg: `twitter_ads` doesn't work on it's own, but does with another operator. | [🔗](https://twitter.com/search?q=source%3A%22GUCCI%20SmartToilet%E2%84%A2%22%20lang%3Aen&src=typed_query)
+  | `card_domain:pscp.tv` | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links. | [🔗](https://twitter.com/search?q=card_domain%3Apscp.tv&src=typed_query)
+  | `card_name:audio` | Tweets with a Player Card (Links to Audio sources, Spotify, Soundcloud etc.) | [🔗](https://twitter.com/search?q=card_name%3Aaudio&src=typed_query)
+  | `card_name:animated_gif` | Tweets With GIFs | [🔗](https://twitter.com/search?q=card_name%3Aanimated_gif&src=typed_query)
+  | `card_name:player` | Tweets with a Player Card | [🔗](https://twitter.com/search?q=card_name%3Aplayer&src=typed_query)
+  | `card_name:app` | Tweets with links to an App Card | [🔗](https://twitter.com/search?q=card_name%3Aapp&src=typed_query)
+  | `card_name:summary_large_image` | Only large image Cards | [🔗](https://twitter.com/search?q=card_name%3Asummary_large_image&src=typed_query)
+  | `card_name:summary` | Only Small image summary cards | [🔗](https://twitter.com/search?q=card_name%3Asummary&src=typed_query)
+
+## Matching:
+
+On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, url:trib.al finds accounts that use that shortener, even though the full url is displayed). `-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art". Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized.
+
+Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
 ## Building Queries:
 
@@ -97,24 +103,22 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 
 To find any quote tweets, search for the tweet permalink, or the tweet ID with `url` eg: `https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`, see [note](#quote-tweets) for more.
 
-On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, url:trib.al finds accounts that use that shortener, even though the full url is displayed).
-
-Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
-
 ### Limitations:
 
 Known limitations: `card_name:` only works for the last 7-8 days.
+
+The maximum number of operators seems to be about 22 or 23.
 
 ### Tweetdeck Equivalents:
 
 Tweetdeck options for columns have equivalents you can use on web search:
 
-Tweets with Images: `filter:images` 
-Videos: `filter:videos`
-Tweets with GIFs: `card_name:animated_gif` 
-"Tweets with broadcasts": `(card_domain:pscp.tv OR card_domain:periscope.tv OR "twitter.com/i/broadcasts/")`
-"Any Media" `(filter:images OR filter:videos)` 
-"Any Links (includes media)": `filter:links` 
+- Tweets with Images: `filter:images` 
+- Videos: `filter:videos`
+- Tweets with GIFs: `card_name:animated_gif` 
+- "Tweets with broadcasts": `(card_domain:pscp.tv OR card_domain:periscope.tv OR "twitter.com/i/broadcasts/")`
+- "Any Media" `(filter:images OR filter:videos)` 
+- "Any Links (includes media)": `filter:links` 
 
 ## Notes:
 
