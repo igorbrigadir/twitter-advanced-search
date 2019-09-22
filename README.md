@@ -79,11 +79,11 @@ App specific | `source:client_name` | Sent from a specified client e.g. source:t
 
 ## Matching:
 
-On Web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, `url:trib.al` finds accounts that use that shortener, even though the full url is displayed).
+On web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, `url:trib.al` finds accounts that use that shortener, even though the full url is displayed).
 
-`-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art".
+By default "Top" results are shown, where "Top" means tweets with some engagements (replies, RTs, likes). "Latest" has most recent tweets. People search will match on descriptions, but not all operators work. "Photos" and "Videos" are presumably equivalent to `filter:images` and `filter:videos`.
 
-Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized. Spelling correction appears sometimes, and also plurals are also matched, eg: `bears` will also match tweets with `bear`.
+Exact Tokenization is not known, but it's most likely a custom one to preserve entities. URLs are also tokenized. Spelling correction appears sometimes, and also plurals are also matched, eg: `bears` will also match tweets with `bear`. `-` not preceeding an operator are removed, so "state-of-the-art" is the same as "state of the art".
 
 Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
@@ -188,6 +188,8 @@ I have no idea how Twitter decides what should match `filter:news`, my guess is 
 It would be great to be able to reliably find Promoted tweets - this may be possible with some of the card searches. Tweets composed in Twitter Ads are available with `source:twitter_ads` but other promoted tweets may not have been created with that app.
 
 I'd also like to search for Collections (Timelines) and Moments, but this seems to work ok with just `url:` searches. eg: `url:twitter.com/i/events` and `url:twitter.com/i/moments` (I think the difference is events are curated?) but `url:twitter.com url:timelines` has many false positives.
+
+In Search Settings, "Hide Sensitive Content" equivalent is `filter:safe` - is there an equivalent to "Remove Blocked and Muted Accounts"?
 
 ### Supported Languages:
 
