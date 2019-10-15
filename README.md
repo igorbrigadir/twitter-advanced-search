@@ -42,7 +42,7 @@ Tweet Type  | `filter:nativeretweets` | Only retweets created using the retweet
   | `filter:retweets` | Old style retweets ("RT") + quoted tweets. | [🔗](https://twitter.com/search?q=filter%3Aretweets%20from%3Atwitter%20until%3A2009-11-06%09&src=typed_query&f=live)
   | `filter:replies` | Tweet is a reply to another Tweet. good for finding conversations, or threads if you add or remove `to:user` | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Areplies%20-to%3Anasa&src=typed_query)
   | `filter:quote` | Contain Quote Tweets | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Aquote&src=typed_query)
-  | `card_name:poll2choice_text_only` | Tweets containing polls. `poll2choice_text_only` for polls containing two choices, `poll3choice_text_only` for polls with three choices and `poll4choice_text_only` for polls with four choices. Only finds currently open polls. | [🔗](https://twitter.com/search?q=lang%3Aen%20card_name%3Apoll4choice_text_only%20OR%20card_name%3Apoll3choice_text_only%20OR%20card_name%3Apoll2choice_text_only&src=typed_query&f=live)
+  | `card_name:poll2choice_text_only` | Tweets containing polls. `poll2choice_text_only` for polls containing two choices, `poll3choice_text_only` for polls with three choices and `poll4choice_text_only` for polls with four choices. Only finds currently open polls. For image Polls, it's `poll2choice_image`, `poll3choice_image`, `poll4choice_image` | [🔗](https://twitter.com/search?q=lang%3Aen%20card_name%3Apoll4choice_text_only%20OR%20card_name%3Apoll3choice_text_only%20OR%20card_name%3Apoll2choice_text_only&src=typed_query&f=live)
   |   |  
 Engagement  | `min_retweets:5` | A minimum number of Retweets. Counts seem to be approximate for larger (1000+) values. | [🔗](https://twitter.com/search?q=min_retweets%3A5000%20nasa&src=typed_query)
   | `min_faves:10` | A minimum number of Likes | [🔗](https://twitter.com/search?q=min_faves%3A10000%20nasa&src=typed_query)
@@ -76,6 +76,7 @@ App specific | `source:client_name` | Sent from a specified client e.g. source:t
   | `card_name:app` | Tweets with links to an App Card | [🔗](https://twitter.com/search?q=card_name%3Aapp&src=typed_query)
   | `card_name:summary_large_image` | Only large image Cards | [🔗](https://twitter.com/search?q=card_name%3Asummary_large_image&src=typed_query)
   | `card_name:summary` | Only Small image summary cards | [🔗](https://twitter.com/search?q=card_name%3Asummary&src=typed_query)
+  | `card_name:promo_website` | Larger than summary_large_image, usually posted via Ads | [🔗](https://twitter.com/search?q=card_name%3Apromo_website%20lang%3Aen&src=typed_query&f=live)
 
 ## Matching:
 
