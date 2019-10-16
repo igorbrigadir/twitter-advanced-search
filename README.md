@@ -77,6 +77,9 @@ App specific | `source:client_name` | Sent from a specified client e.g. source:t
   | `card_name:summary_large_image` | Only large image Cards | [🔗](https://twitter.com/search?q=card_name%3Asummary_large_image&src=typed_query)
   | `card_name:summary` | Only Small image summary cards | [🔗](https://twitter.com/search?q=card_name%3Asummary&src=typed_query)
   | `card_name:promo_website` | Larger than summary_large_image, usually posted via Ads | [🔗](https://twitter.com/search?q=card_name%3Apromo_website%20lang%3Aen&src=typed_query&f=live)
+  | `card_name:promo_image_convo` <br> `card_name:promo_video_convo` | Finds [Conversational Ads](https://business.twitter.com/en/help/campaign-setup/conversational-ad-formats.html) cards. | [🔗](https://twitter.com/search?q=lang%3Aen%20card_name%3Apromo_video_convo%20OR%20card_name%3Apromo_image_convo&src=typed_query&f=live)
+  
+  
 
 ## Matching:
 
