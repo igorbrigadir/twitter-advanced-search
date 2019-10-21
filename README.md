@@ -69,7 +69,8 @@ More Filters | `filter:follows` | Only from accounts you follow | [🔗](https:/
   | `filter:hashtags` | Only Tweets with Hashtags. | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Ahashtags&src=typed_query)
   |   |  
 App specific | `source:client_name` | Sent from a specified client e.g. source:tweetdeck (See [Note](#common-clients) for common ones) eg: `twitter_ads` doesn't work on it's own, but does with another operator. | [🔗](https://twitter.com/search?q=source%3A%22GUCCI%20SmartToilet%E2%84%A2%22%20lang%3Aen&src=typed_query)
-  | `card_domain:pscp.tv` | Matches url in a Twitter Card. Maybe equivalent to `url:` for most links. | [🔗](https://twitter.com/search?q=card_domain%3Apscp.tv&src=typed_query)
+  | `card_domain:pscp.tv` | Matches domain name in a Twitter Card. Mostly equivalent to `url:` operator. | [🔗](https://twitter.com/search?q=card_domain%3Apscp.tv&src=typed_query)
+  | `card_url:pscp.tv` | Matches domain name in a Card, but with different results to `card_domain`. | [🔗](https://twitter.com/search?q=card_url%3Apscp.tv&src=typed_query)
   | `card_name:audio` | Tweets with a Player Card (Links to Audio sources, Spotify, Soundcloud etc.) | [🔗](https://twitter.com/search?q=card_name%3Aaudio&src=typed_query)
   | `card_name:animated_gif` | Tweets With GIFs | [🔗](https://twitter.com/search?q=card_name%3Aanimated_gif&src=typed_query)
   | `card_name:player` | Tweets with a Player Card | [🔗](https://twitter.com/search?q=card_name%3Aplayer&src=typed_query)
