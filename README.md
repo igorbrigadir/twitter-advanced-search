@@ -203,66 +203,68 @@ From TweetDeck dropdown menu:
 <details><summary>All Languages</summary>
 <p>
 
-`lang:am` Amharic (አማርኛ)
-`lang:ar` Arabic (العربية)
-`lang:bg` Bulgarian (Български)
-`lang:bn` Bengali (বাংলা)
-`lang:bo` Tibetan (བོད་སྐད)
-`lang:ca` Catalan (Català)
-`lang:chr` Cherokee (ᏣᎳᎩ)
-`lang:cs` Czech (čeština)
-`lang:da` Danish (Dansk)
-`lang:de` German (Deutsch)
-`lang:dv` Maldivian (ދިވެހި)
-`lang:el` Greek (Ελληνικά)
-`lang:en` English (English)
-`lang:es` Spanish (Español)
-`lang:et` Estonian (eesti)
-`lang:fa` Persian (فارسی)
-`lang:fi` Finnish (Suomi)
-`lang:fr` French (Français)
-`lang:gu` Gujarati (ગુજરાતી)
-`lang:hi` Hindi (हिंदी)
-`lang:ht` Haitian Creole (Kreyòl ayisyen)
-`lang:hu` Hungarian (Magyar)
-`lang:hy` Armenian (Հայերեն)
-`lang:in` Indonesian (Bahasa Indonesia)
-`lang:is` Icelandic (Íslenska)
-`lang:it` Italian (Italiano)
-`lang:iu` Inuktitut (ᐃᓄᒃᑎᑐᑦ)
-`lang:iw` Hebrew (עברית)
-`lang:ja` Japanese (日本語)
-`lang:ka` Georgian (ქართული)
-`lang:km` Khmer (ខ្មែរ)
-`lang:kn` Kannada (ಕನ್ನಡ)
-`lang:ko` Korean (한국어)
-`lang:lo` Lao (ລາວ)
-`lang:lt` Lithuanian (Lietuvių)
-`lang:lv` Latvian (latviešu valoda)
-`lang:ml` Malayalam (മലയാളം)
-`lang:my` Myanmar (မြန်မာဘာသာ)
-`lang:ne` Nepali (नेपाली)
-`lang:nl` Dutch (Nederlands)
-`lang:no` Norwegian (Norsk)
-`lang:or` Oriya (ଓଡ଼ିଆ)
-`lang:pa` Panjabi (ਪੰਜਾਬੀ)
-`lang:pl` Polish (Polski)
-`lang:pt` Portuguese (Português)
-`lang:ro` Romanian (limba română)
-`lang:ru` Russian (Русский)
-`lang:si` Sinhala (සිංහල)
-`lang:sk` Slovak (slovenčina)
-`lang:sl` Slovene (slovenski jezik)
-`lang:sv` Swedish (Svenska)
-`lang:ta` Tamil (தமிழ்)
-`lang:te` Telugu (తెలుగు)
-`lang:th` Thai (ไทย)
-`lang:tl` Tagalog (Tagalog)
-`lang:tr` Turkish (Türkçe)
-`lang:uk` Ukrainian (українська мова)
-`lang:ur` Urdu (ﺍﺭﺩﻭ)
-`lang:vi` Vietnamese (Tiếng Việt)
-`lang:zh` Chinese (中文)
+```txt
+lang:am Amharic (አማርኛ)
+lang:ar Arabic (العربية)
+lang:bg Bulgarian (Български)
+lang:bn Bengali (বাংলা)
+lang:bo Tibetan (བོད་སྐད)
+lang:ca Catalan (Català)
+lang:ch` Cherokee (ᏣᎳᎩ)
+lang:cs Czech (čeština)
+lang:da Danish (Dansk)
+lang:de German (Deutsch)
+lang:dv Maldivian (ދިވެހި)
+lang:el Greek (Ελληνικά)
+lang:en English (English)
+lang:es Spanish (Español)
+lang:et Estonian (eesti)
+lang:fa Persian (فارسی)
+lang:fi Finnish (Suomi)
+lang:fr French (Français)
+lang:gu Gujarati (ગુજરાતી)
+lang:hi Hindi (हिंदी)
+lang:ht Haitian Creole (Kreyòl ayisyen)
+lang:hu Hungarian (Magyar)
+lang:hy Armenian (Հայերեն)
+lang:in Indonesian (Bahasa Indonesia)
+lang:is Icelandic (Íslenska)
+lang:it Italian (Italiano)
+lang:iu Inuktitut (ᐃᓄᒃᑎᑐᑦ)
+lang:iw Hebrew (עברית)
+lang:ja Japanese (日本語)
+lang:ka Georgian (ქართული)
+lang:km Khmer (ខ្មែរ)
+lang:kn Kannada (ಕನ್ನಡ)
+lang:ko Korean (한국어)
+lang:lo Lao (ລາວ)
+lang:lt Lithuanian (Lietuvių)
+lang:lv Latvian (latviešu valoda)
+lang:ml Malayalam (മലയാളം)
+lang:my Myanmar (မြန်မာဘာသာ)
+lang:ne Nepali (नेपाली)
+lang:nl Dutch (Nederlands)
+lang:no Norwegian (Norsk)
+lang:or Oriya (ଓଡ଼ିଆ)
+lang:pa Panjabi (ਪੰਜਾਬੀ)
+lang:pl Polish (Polski)
+lang:pt Portuguese (Português)
+lang:ro Romanian (limba română)
+lang:ru Russian (Русский)
+lang:si Sinhala (සිංහල)
+lang:sk Slovak (slovenčina)
+lang:sl Slovene (slovenski jezik)
+lang:sv Swedish (Svenska)
+lang:ta Tamil (தமிழ்)
+lang:te Telugu (తెలుగు)
+lang:th Thai (ไทย)
+lang:tl Tagalog (Tagalog)
+lang:tr Turkish (Türkçe)
+lang:uk Ukrainian (українська мова)
+lang:ur Urdu (ﺍﺭﺩﻭ)
+lang:vi Vietnamese (Tiếng Việt)
+lang:zh Chinese (中文)
+```
 
 </p>
 </details>
@@ -271,21 +273,48 @@ Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching
 
 ### Common clients:
 
-`source:` should work for any API client, try putting the client name in quotes or replace spaces with underscores. This is the App name field that you can alter in the [developer app configuration page](https://developer.twitter.com/en/apps), so anyone can set anything here and appear to tweet from a made up client. You cannot copy an existing name. This operator needs to be combined with something else to work, eg: `lang:en` These are some common ones:
+`source:` should work for any API client, try putting the client name in quotes or replace spaces with underscores. This is the App name field that you can alter in the [developer app configuration page](https://developer.twitter.com/en/apps), so anyone can set anything here and appear to tweet from a made up client.
 
-`twitter_web_client`, 
-`twitter_for_iphone`, 
-`twitter_for_android`, 
-`twitter_ads`
-`tweetdeck`, 
-`facebook`, 
-`instagram`, 
-`twitterfeed`, 
-`cloudhopper` (tweets via sms service), 
-`tweetbot.net`, 
-`IFTTT` 
+You cannot copy an existing name. This operator needs to be combined with something else to work, eg: `lang:en` These are some common ones:
 
-These are some notable, weird and wonderful ones:
+<details><summary>Official Twitter Clients:</summary>
+<p>
 
-`source:"LG Smart Refrigerator"`
-`source:"GUCCI SmartToilet™"`
+```
+twitter_web_client
+twitter_for_iphone
+twitter_for_android
+twitter_ads
+tweetdeck
+twitter_for_advertisers
+twitter_media_studio
+cloudhopper (tweets via sms service)
+```
+
+</p>
+</details>
+
+<details><summary>Very Common 3rd Party Clients:</summary>
+<p>
+
+```
+facebook
+instagram
+twitterfeed
+tweetbot.net
+IFTTT
+```
+
+</p>
+</details>
+
+<details><summary>notable, weird and wonderful ones:</summary>
+<p>
+
+```
+"LG Smart Refrigerator"
+"GUCCI SmartToilet™"
+```
+
+</p>
+</details>
