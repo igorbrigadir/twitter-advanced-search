@@ -23,7 +23,7 @@ Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa".
 Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` | [🔗](https://twitter.com/search?q=dogs%20from%3Anasa&src=typed_query)
   | `to:user` | Replying to a particular `@username` | [🔗](https://twitter.com/search?q=%23MoonTunes%20to%3Anasa&src=typed_query)
   | `@user` | Mentioning a particular `@username`. Combine with `-from:username` to get only mentions | [🔗](https://twitter.com/search?q=%40cern%20-from%3Acern&src=typed_query)
-  | `list:user/list-slug` OR `list:listid` | From members of this public List e.g. list:NASA/astronauts. Use the list slug (url part after `/lists/`). The new twitter interface seems to use list IDs rather than user/list-slug. With urls like twitter.com/i/lists/12345678 you can search for list:12345678 | [🔗](https://twitter.com/search?q=list%3ANASA%2Fastronauts&src=typed_query)
+  | `list:user/list-slug` <br> `list:108534289` | From members of this public List e.g. `list:NASA/astronauts`. Use the list slug (url part after `/lists/`). Or a List ID from the API or with urls like `twitter.com/i/lists/108534289` | [🔗](https://twitter.com/search?q=list%3ANASA%2Fastronauts&src=typed_query)
   | `filter:verified` | From verified users | [🔗](https://twitter.com/search?q=filter%3Averified&src=typed_query)
   |   |  
 Geo | `near:city` | Geotagged in this place. Also supports Phrases, eg: "The Hague" | [🔗](https://twitter.com/search?q=near%3A%22The%20Hague%22&src=typed_query)
