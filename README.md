@@ -42,6 +42,8 @@ Tweet Type  | `filter:nativeretweets` | Only retweets created using the retweet
   | `filter:retweets` | Old style retweets ("RT") + quoted tweets. | [🔗](https://twitter.com/search?q=filter%3Aretweets%20from%3Atwitter%20until%3A2009-11-06%09&src=typed_query)
   | `filter:replies` | Tweet is a reply to another Tweet. good for finding conversations, or threads if you add or remove `to:user` | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Areplies%20-to%3Anasa&src=typed_query)
   | `filter:quote` | Contain Quote Tweets | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Aquote&src=typed_query)
+  | `quoted_tweet_id:tweet_id` | Search for quotes of a specific tweet | [🔗](https://twitter.com/search?q=quoted_tweet_id%3A1138631847783608321&src=typed_query)
+  | `quoted_user_id:user_id` | Search for all quotes of a specific user | [🔗](https://twitter.com/search?q=quoted_user_id%3A11348282&src=typed_query)
   | `card_name:poll2choice_text_only` <br> `card_name:poll3choice_text_only` <br> `card_name:poll4choice_text_only` <br> `card_name:poll2choice_image` <br> `card_name:poll3choice_image` <br> `card_name:poll4choice_image`| Tweets containing polls. For polls containing 2, 3, 4 choices, or image Polls. | [🔗](https://twitter.com/search?q=lang%3Aen%20card_name%3Apoll4choice_text_only%20OR%20card_name%3Apoll3choice_text_only%20OR%20card_name%3Apoll2choice_text_only&src=typed_query)
   |   |  
 Engagement  | `min_retweets:5` | A minimum number of Retweets. Counts seem to be approximate for larger (1000+) values. | [🔗](https://twitter.com/search?q=min_retweets%3A5000%20nasa&src=typed_query)
