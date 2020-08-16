@@ -18,7 +18,7 @@ Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa".
 &nbsp; | `:) OR :(` | Some emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(` | [🔗](https://twitter.com/search?q=%3A%29%20OR%20%3A-%29%20OR%20%3AP%20OR%20%3AD%20OR%20%3A%28%20OR%20%3A-%28&src=typed_query)
 &nbsp; | 👀 | Emoji searches are also matched. Usually needs another operator to work. | [🔗](https://twitter.com/search?q=%F0%9F%91%80%20lang%3Aen&src=typed_query) 
 &nbsp; | `url:google.com` | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well. Works for both shortened and canonical urls, eg: gu.com shortener for theguardian.com. When searching for Domains with hyphens in it, you have to replace the hyphen by an underscore (like url:t_mobile.com) | [🔗](https://twitter.com/search?q=url%3Agu.com&src=typed_query) 
-&nbsp; | `lang:en` | Search for tweets in specified language, see [list](#supported-languages) below. | [🔗](https://twitter.com/search?q=lang%3Aen&src=typed_query)
+&nbsp; | `lang:en` | Search for tweets in specified language, see the full [list](#supported-languages) below. | [🔗](https://twitter.com/search?q=lang%3Aen&src=typed_query)
 &nbsp; | | | 
 Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` | [🔗](https://twitter.com/search?q=dogs%20from%3Anasa&src=typed_query)
 &nbsp; | `to:user` | Replying to a particular `@username` | [🔗](https://twitter.com/search?q=%23MoonTunes%20to%3Anasa&src=typed_query)
@@ -200,7 +200,7 @@ In Search Settings, "Hide Sensitive Content" equivalent is `filter:safe` - is th
 
 ### Supported Languages:
 
-From TweetDeck dropdown menu:
+Language is specified as [2 letter ISO codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). The list from TweetDeck dropdown menu has all of them:
 
 <details><summary>All Languages</summary>
 <p>
