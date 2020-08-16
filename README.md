@@ -10,7 +10,7 @@ Class | Operator | Finds Tweets… | Eg:
 -- | -- | -- | --
 Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa". Spaces are implicit AND. Brackets can be used to group individual words if using other operators. | [🔗](https://twitter.com/search?q=esa%20nasa&src=typed_query)
 &nbsp; | `nasa OR esa` | Either "nasa" or "esa". OR must be in uppercase. | [🔗](https://twitter.com/search?q=nasa%20OR%20esa&src=typed_query)
-&nbsp; | `"state of the art"` | The complete phrase "state of the art". Will also match "state-of-the-art" | [🔗](https://twitter.com/search?q=%22state%20of%20the%20art%22&src=typed_query)
+&nbsp; | `"state of the art"` | The complete phrase "state of the art". Will also match "state-of-the-art". Also use quotes to prevent spelling correction. | [🔗](https://twitter.com/search?q=%22state%20of%20the%20art%22&src=typed_query)
 &nbsp; | `-love` <br> `-"live laugh love"` | `-` is used for excluding "love". Also applies to quoted phrases and other operators. | [🔗](https://twitter.com/search?q=bears%20-chicagobears&src=typed_query)
 &nbsp; | `#tgif` | A hashtag | [🔗](https://twitter.com/search?q=%23tgif&src=typed_query)
 &nbsp; | `$TWTR` | A cashtag, like hashtags but for stock symbols | [🔗](https://twitter.com/search?q=%24TWTR%20OR%20%24FB%20OR%20%24AMZN%20OR%20%24AAPL%20OR%20%24NFLX%20OR%20%24GOOG&src=typed_query)
