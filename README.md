@@ -94,6 +94,9 @@ Exact Tokenization is not known, but it's most likely a custom one to preserve e
 
 Private accounts are not included in the search index, and their tweets do no appear in results. Locked and suspended accounts are also hidden from results. There are other situations where tweets may not appear: [anti-spam measures](https://help.twitter.com/en/rules-and-policies/enforcement-options), or tweets simply have not been indexed due to server issues. 
 
+Twitter is using some words as signal words. E.g. when you search for “photo”, Twitter assumes you’re looking for Tweets with attached photos. If you want to search for Tweets which literally contain the word “photo”, you have to wrap it in double quotes `"photo"`.
+
+
 ## Building Queries:
 
 Any "`filter:type`" can also be negated using the "`-`" symbol. `exclude:links` is the same as `-filter:links`
@@ -113,6 +116,8 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 `space (big OR large) list:nasa/astronauts (source:twitter_for_iphone OR source:twitter_web_client) filter:images since:2011-01-01 -#asteroid`
 
 To find any quote tweets, search for the tweet permalink, or the tweet ID with `url` eg: `https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`, see [note](#quote-tweets) for more.
+
+For some queries you may want to use parameters with hyphens or spaces in it, e.g. `site:t-mobile.com` or `app:Twitter for iOS`. Twitter doesn’t accept hyphens or spaces in parameters and won’t display any tweets for this query. You can still search for those parameters by replacing all hyphens and spaces with underscores, e.g. `site:t_mobile.com` or `app:Twitter_for_iOS`.
 
 ### Limitations:
 
