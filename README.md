@@ -1,8 +1,8 @@
-# Advanced Search on Twitter
+# 🔍 Advanced Search on Twitter
 
-![👀](https://repository-images.githubusercontent.com/200083171/7d2f7d80-b492-11e9-8f1b-4a5863429dca)
+[![👀](https://repository-images.githubusercontent.com/200083171/7d2f7d80-b492-11e9-8f1b-4a5863429dca)](https://twitter.com/search-advanced)
 
-These operators work on Web, Mobile, Tweetdeck.
+These operators work on [Web](https://twitter.com/search-advanced), [Mobile](https://mobile.twitter.com/search-advanced), [Tweetdeck](https://tweetdeck.twitter.com/).
 
 Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features), @lucahammer [Guide](https://freshvanroot.com/blog/2019/twitter-search-guide-by-luca/), @eevee [Twitter Manual](https://eev.ee/blog/2016/02/20/twitters-missing-manual/), @pushshift and Twitter / Tweetdeck itself. Contributions / tests, examples welcome!
 
