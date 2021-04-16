@@ -4,7 +4,7 @@
 
 These operators work on [Web](https://twitter.com/search-advanced), [Mobile](https://mobile.twitter.com/search-advanced), [Tweetdeck](https://tweetdeck.twitter.com/).
 
-There is some overlap, but largely these will not work for [v1.1 Search](https://developer.twitter.com/en/docs/twitter-api/v1/tweets/search/overview), [Premium Search](https://developer.twitter.com/en/docs/twitter-api/premium/search-api/overview), or [v2 Search](https://developer.twitter.com/en/docs/twitter-api/tweets/search/introduction) APIs.
+There is some overlap, but largely these will **not work** for [v1.1 Search](https://developer.twitter.com/en/docs/twitter-api/v1/tweets/search/overview), [Premium Search](https://developer.twitter.com/en/docs/twitter-api/premium/search-api/overview), or [v2 Search](https://developer.twitter.com/en/docs/twitter-api/tweets/search/introduction) APIs.
 
 Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced-tweetdeck-features), @lucahammer [Guide](https://freshvanroot.com/blog/2019/twitter-search-guide-by-luca/), @eevee [Twitter Manual](https://eev.ee/blog/2016/02/20/twitters-missing-manual/), @pushshift and Twitter / Tweetdeck itself. Contributions / tests, examples welcome!
 
