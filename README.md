@@ -73,6 +73,7 @@ Media | `filter:media` | All media types. | [🔗](https://twitter.com/search?q=
 &nbsp; | `filter:vine` | Vines (RIP) | [🔗](https://twitter.com/search?q=filter%3Avine%20cat&src=typed_query&f=live)
 &nbsp; | `filter:consumer_video` | Twitter native video only | [🔗](https://twitter.com/search?q=filter%3Aconsumer_video%20cat&src=typed_query&f=live)
 &nbsp; | `filter:pro_video` | Twitter pro video (Amplify) only | [🔗](https://twitter.com/search?q=filter%3Apro_video%20cat&src=typed_query&f=live)
+&nbsp; | `filter:spaces` | Twitter Spaces only | [🔗](https://twitter.com/search?q=filter%3Aspaces&src=typed_query&f=live)
 &nbsp; | | | 
 More Filters | `filter:links` | Only containing some URL, includes media. use -filter:media for urls that aren't media | [🔗](https://twitter.com/search?q=filter%3Afollows%20filter%3Alinks%20-filter%3Amedia&src=typed_query&f=live)
 &nbsp; | `filter:mentions` | Containing any sort of `@mentions` | [🔗](https://twitter.com/search?q=filter%3Amentions%20from%3Atwitter%20-filter%3Areplies&src=typed_query&f=live)
