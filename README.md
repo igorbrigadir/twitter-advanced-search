@@ -10,18 +10,18 @@ Adapted from [TweetDeck Help](https://help.twitter.com/en/using-twitter/advanced
 
 Class | Operator | Finds Tweets… | Eg:
 -- | -- | -- | --
-Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "nasa" and "esa". Spaces are implicit AND. Brackets can be used to group individual words if using other operators. | [🔗](https://twitter.com/search?q=esa%20nasa&src=typed_query&f=live)
-&nbsp; | `nasa OR esa` | Either "nasa" or "esa". OR must be in uppercase. | [🔗](https://twitter.com/search?q=nasa%20OR%20esa&src=typed_query&f=live)
-&nbsp; | `"state of the art"` | The complete phrase "state of the art". Will also match "state-of-the-art". Also use quotes to prevent spelling correction. | [🔗](https://twitter.com/search?q=%22state%20of%20the%20art%22&src=typed_query&f=live)
+Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "`nasa`" and "`esa`". Spaces are implicit AND. Brackets can be used to group individual words if using other operators. | [🔗](https://twitter.com/search?q=esa%20nasa&src=typed_query&f=live)
+&nbsp; | `nasa OR esa` | Either "`nasa`" or "`esa`". OR must be in uppercase. | [🔗](https://twitter.com/search?q=nasa%20OR%20esa&src=typed_query&f=live)
+&nbsp; | `"state of the art"` | The complete phrase "`state of the art`". Will also match "`state-of-the-art`". Also use quotes to prevent spelling correction. | [🔗](https://twitter.com/search?q=%22state%20of%20the%20art%22&src=typed_query&f=live)
 &nbsp; | `"this is the * time this week"` | A complete phrase with a wildcard. ` * ` does not work outside of a quoted phrase or without spaces. | [🔗](https://twitter.com/search?q=%22this%20is%20the%20*%20time%20this%20week%22&src=typed_query&f=live)
 &nbsp; | `+radiooooo"` | Force a term to be included as-is. Useful to prevent spelling correction. | [🔗](https://twitter.com/search?q=%2Bradiooooo&src=typed_query&f=live)
-&nbsp; | `-love` <br> `-"live laugh love"` | `-` is used for excluding "love". Also applies to quoted phrases and other operators. | [🔗](https://twitter.com/search?q=bears%20-chicagobears&src=typed_query&f=live)
+&nbsp; | `-love` <br> `-"live laugh love"` | `-` is used for excluding "`love`". Also applies to quoted phrases and other operators. | [🔗](https://twitter.com/search?q=bears%20-chicagobears&src=typed_query&f=live)
 &nbsp; | `#tgif` | A hashtag | [🔗](https://twitter.com/search?q=%23tgif&src=typed_query&f=live)
 &nbsp; | `$TWTR` | A cashtag, like hashtags but for stock symbols | [🔗](https://twitter.com/search?q=%24TWTR%20OR%20%24FB%20OR%20%24AMZN%20OR%20%24AAPL%20OR%20%24NFLX%20OR%20%24GOOG&src=typed_query&f=live)
 &nbsp; | `What ?` | Question marks are matched | [🔗](https://twitter.com/search?q=(Who%20OR%20What%20OR%20When%20OR%20Where%20OR%20Why%20OR%20How)%20%3F&src=typed_query&f=live)
 &nbsp; | `:) OR :(` | Some emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(` | [🔗](https://twitter.com/search?q=%3A%29%20OR%20%3A-%29%20OR%20%3AP%20OR%20%3AD%20OR%20%3A%28%20OR%20%3A-%28&src=typed_query&f=live)
 &nbsp; | 👀 | Emoji searches are also matched. Usually needs another operator to work. | [🔗](https://twitter.com/search?q=%F0%9F%91%80%20lang%3Aen&src=typed_query&f=live) 
-&nbsp; | `url:google.com` | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well. Works for both shortened and canonical urls, eg: gu.com shortener for theguardian.com. When searching for Domains with hyphens in it, you have to replace the hyphen by an underscore (like url:t_mobile.com) but underscores `_` are also tokenized out, and may not match | [🔗](https://twitter.com/search?q=url%3Agu.com&src=typed_query&f=live) 
+&nbsp; | `url:google.com` | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well. Works for both shortened and canonical urls, eg: `gu.com` shortener for `theguardian.com`. When searching for Domains with hyphens in it, you have to replace the hyphen by an underscore (like `url:t_mobile.com`) but underscores `_` are also tokenized out, and may not match | [🔗](https://twitter.com/search?q=url%3Agu.com&src=typed_query&f=live) 
 &nbsp; | `lang:en` | Search for tweets in specified language, not always accurate, see the full [list](#supported-languages) below. | [🔗](https://twitter.com/search?q=lang%3Aen&src=typed_query&f=live)
 &nbsp; | | | 
 Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` | [🔗](https://twitter.com/search?q=dogs%20from%3Anasa&src=typed_query&f=live)
@@ -30,9 +30,9 @@ Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` |
 &nbsp; | `list:108534289` <br> `list:user/list-slug` | Tweets from members of this public list. Use the list ID from the API or with urls like `https://twitter.com/i/lists/4143216`. List slug is for old list urls like `http://twitter.com/nasa/lists/astronauts`. Cannot be negated, so you can't search for "not on list". | [🔗](https://twitter.com/search?q=list%3A4143216&src=typed_query&f=live)
 &nbsp; | `filter:verified` | From verified users | [🔗](https://twitter.com/search?q=filter%3Averified&src=typed_query&f=live)
 &nbsp; | `filter:follows` | Only from accounts you follow | [🔗](https://twitter.com/search?q=filter%3Afollows%20lang%3Aen&src=typed_query&f=live)
-&nbsp; | `filter:social` <br> `filter:trusted` | Only from algorithmically expanded network of accounts based your own follows and activities. Works on "Top" results not "Latest" | [🔗](https://twitter.com/search?q=kitten%20filter%3Asocial&src=typed_query)
+&nbsp; | `filter:social` <br> `filter:trusted` | Only from algorithmically expanded network of accounts based your own follows and activities. Works on "`Top`" results not "`Latest`" | [🔗](https://twitter.com/search?q=kitten%20filter%3Asocial&src=typed_query)
 &nbsp; | | | 
-Geo | `near:city` | Geotagged in this place. Also supports Phrases, eg: "The Hague" | [🔗](https://twitter.com/search?q=near%3A%22The%20Hague%22&src=typed_query&f=live)
+Geo | `near:city` | Geotagged in this place. Also supports Phrases, eg: `near:"The Hague"` | [🔗](https://twitter.com/search?q=near%3A%22The%20Hague%22&src=typed_query&f=live)
 &nbsp; | `near:me` | Near where twitter thinks you are | [🔗](https://twitter.com/search?q=near%3Ame&src=typed_query&f=live)
 &nbsp; | `within:radius` | Within specific radius of the "near" operator, to apply a limit. Can use km or mi. e.g. `fire near:san-francisco within:10km` | [🔗](https://twitter.com/search?q=fire%20near%3Asan-francisco%20within%3A10km&src=typed_query&f=live)
 &nbsp; | `geocode:lat,long,radius` | E.g., to get tweets 10km around twitters hq, use `geocode:37.7764685,-122.4172004,10km` | [🔗](https://twitter.com/search?q=geocode%3A37.7764685%2C-122.4172004%2C10km&src=typed_query&f=live)
@@ -65,7 +65,7 @@ Engagement | `filter:has_engagement` | Has some engagement (replies, likes, retw
 &nbsp; | `-min_replies:100` | A maximum number of replies | [🔗](https://twitter.com/search?q=-min_replies%3A100%20nasa&src=typed_query&f=live)
 &nbsp; | | | 
 Media | `filter:media` | All media types. | [🔗](https://twitter.com/search?q=filter%3Amedia%20cat&src=typed_query&f=live)
-&nbsp; | `filter:twimg` | Native Twitter images (pic.twitter.com links) | [🔗](https://twitter.com/search?q=filter%3Atwimg%20cat&src=typed_query&f=live)
+&nbsp; | `filter:twimg` | Native Twitter images (`pic.twitter.com` links) | [🔗](https://twitter.com/search?q=filter%3Atwimg%20cat&src=typed_query&f=live)
 &nbsp; | `filter:images` | All images. | [🔗](https://twitter.com/search?q=filter%3Aimages%20cat&src=typed_query&f=live)
 &nbsp; | `filter:videos` | All video types, including native Twitter video and external sources such as Youtube. | [🔗](https://twitter.com/search?q=filter%3Avideos%20cat&src=typed_query&f=live)
 &nbsp; | `filter:periscope` | Periscopes | [🔗](https://twitter.com/search?q=filter%3Aperiscope%20cat&src=typed_query&f=live)
@@ -75,7 +75,7 @@ Media | `filter:media` | All media types. | [🔗](https://twitter.com/search?q=
 &nbsp; | `filter:pro_video` | Twitter pro video (Amplify) only | [🔗](https://twitter.com/search?q=filter%3Apro_video%20cat&src=typed_query&f=live)
 &nbsp; | `filter:spaces` | Twitter Spaces only | [🔗](https://twitter.com/search?q=filter%3Aspaces&src=typed_query&f=live)
 &nbsp; | | | 
-More Filters | `filter:links` | Only containing some URL, includes media. use -filter:media for urls that aren't media | [🔗](https://twitter.com/search?q=filter%3Afollows%20filter%3Alinks%20-filter%3Amedia&src=typed_query&f=live)
+More Filters | `filter:links` | Only containing some URL, includes media. use `-filter:media` for urls that aren't media | [🔗](https://twitter.com/search?q=filter%3Afollows%20filter%3Alinks%20-filter%3Amedia&src=typed_query&f=live)
 &nbsp; | `filter:mentions` | Containing any sort of `@mentions` | [🔗](https://twitter.com/search?q=filter%3Amentions%20from%3Atwitter%20-filter%3Areplies&src=typed_query&f=live)
 &nbsp; | `filter:news` | Containing link to a news story. Combine with a list operator to narrow the user set down further. | [🔗](https://twitter.com/search?q=filter%3Anews%20lang%3Aen&src=typed_query&f=live)
 &nbsp; | `filter:safe` | Excluding NSFW content. Excludes content that users have marked as "Potentially Sensitive". Doesn't always guarantee SFW results. | [🔗](https://twitter.com/search?q=filter%3Asafe%20%23followfriday&src=typed_query&f=live)
