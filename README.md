@@ -300,10 +300,14 @@ You cannot copy an existing name. This operator needs to be combined with someth
 
 ```
 twitter_web_client
+twitter_web_app
 twitter_for_iphone
+twitter_for_ipad
+twitter_for_mac
 twitter_for_android
 twitter_ads
 tweetdeck
+tweetdeck_web_app
 twitter_for_advertisers
 twitter_media_studio
 cloudhopper (tweets via sms service)
