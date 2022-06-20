@@ -22,7 +22,7 @@ Tweet content | `nasa esa` <br> `(nasa esa)` | Containing both "`nasa`" and "`es
 &nbsp; | `:) OR :(` | Some emoticons are matched, positive `:) :-) :P :D` or negative `:-( :(` | [🔗](https://twitter.com/search?q=%3A%29%20OR%20%3A-%29%20OR%20%3AP%20OR%20%3AD%20OR%20%3A%28%20OR%20%3A-%28&src=typed_query&f=live)
 &nbsp; | 👀 | Emoji searches are also matched. Usually needs another operator to work. | [🔗](https://twitter.com/search?q=%F0%9F%91%80%20lang%3Aen&src=typed_query&f=live) 
 &nbsp; | `url:google.com` | urls are tokenized and matched, works very well for subdomains and domains, not so well for long urls, depends on url. Youtube ids work well. Works for both shortened and canonical urls, eg: `gu.com` shortener for `theguardian.com`. When searching for Domains with hyphens in it, you have to replace the hyphen by an underscore (like `url:t_mobile.com`) but underscores `_` are also tokenized out, and may not match | [🔗](https://twitter.com/search?q=url%3Agu.com&src=typed_query&f=live) 
-&nbsp; | `lang:en` | Search for tweets in specified language, not always accurate, see the full [list](#supported-languages) below. | [🔗](https://twitter.com/search?q=lang%3Aen&src=typed_query&f=live)
+&nbsp; | `lang:en` | Search for tweets in specified language, not always accurate, see the full [list](#supported-languages) and special `lang` codes below. | [🔗](https://twitter.com/search?q=lang%3Aen&src=typed_query&f=live)
 &nbsp; | | | 
 Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` | [🔗](https://twitter.com/search?q=dogs%20from%3Anasa&src=typed_query&f=live)
 &nbsp; | `to:user` | Replying to a particular `@username` | [🔗](https://twitter.com/search?q=%23MoonTunes%20to%3Anasa&src=typed_query&f=live)
@@ -288,6 +288,13 @@ lang:zh Chinese (中文)
 </details>
 
 Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching the keywords are returned instead of the language. 
+
+There are also some special language codes that work. For example:
+
+* [`lang:und`](https://twitter.com/search?q=lang%3Aund&src=typed_query&f=live) for undefined language
+* [`lang:qht`](https://twitter.com/search?q=lang%3Aqht&src=typed_query&f=live) for tweets with hashtags only (works for tweets since `2022-06-14`)
+* [`lang:qme`](https://twitter.com/search?q=lang%3Aqme&src=typed_query&f=live) for tweets with media links (works for tweets since `2022-06-14`)
+
 
 ### Common clients:
 
