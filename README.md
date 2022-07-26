@@ -292,8 +292,12 @@ Searching for `lang:chr`, `lang:iu`, `lang:sk` seems to fail, as tweets matching
 There are also some special language codes that work. For example:
 
 * [`lang:und`](https://twitter.com/search?q=lang%3Aund&src=typed_query&f=live) for undefined language
+* [`lang:qam`](https://twitter.com/search?q=lang%3Aqam&src=typed_query&f=live) for tweets with mentions only (works for tweets since `2022-06-14`)
+* [`lang:qct`](https://twitter.com/search?q=lang%3Aqct&src=typed_query&f=live) for tweets with cashtags only (works for tweets since `2022-06-14`)
 * [`lang:qht`](https://twitter.com/search?q=lang%3Aqht&src=typed_query&f=live) for tweets with hashtags only (works for tweets since `2022-06-14`)
 * [`lang:qme`](https://twitter.com/search?q=lang%3Aqme&src=typed_query&f=live) for tweets with media links (works for tweets since `2022-06-14`)
+* [`lang:qst`](https://twitter.com/search?q=lang%3Aqst&src=typed_query&f=live) for tweets with a very short text (works for tweets since `2022-06-14`)
+* [`lang:zxx`](https://twitter.com/search?q=lang%3Azxx&src=typed_query&f=live) for tweets with either media or Twitter Card only, without any additional text (works for tweets since `2022-06-14`)
 
 
 ### Common clients:
