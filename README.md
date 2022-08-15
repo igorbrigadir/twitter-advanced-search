@@ -157,7 +157,7 @@ All user, tweet, DM, and some other object IDs are snowflake IDs on twitter sinc
 
 To use these with `since_id` / `max_id` as time delimiters, either pick a tweet ID that roughly has a `created_at` time you need, remembering that all times on twitter are UTC, or use the following (This works for all tweets after Snowflake was implemented):
 
-To convert a Twitter ID to microsecond epoch:
+To convert a Twitter ID to millisecond epoch:
 
 `(tweet_id >> 22) + 1288834974657` -- This gives the millisecond epoch of when the tweet or user was created.
 
