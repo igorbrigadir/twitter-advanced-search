@@ -60,9 +60,9 @@ Engagement | `filter:has_engagement` | Has some engagement (replies, likes, retw
 &nbsp; | `min_retweets:5` | A minimum number of Retweets. Counts seem to be approximate for larger (1000+) values. | [🔗](https://twitter.com/search?q=min_retweets%3A5000%20nasa&src=typed_query&f=live)
 &nbsp; | `min_faves:10` | A minimum number of Likes | [🔗](https://twitter.com/search?q=min_faves%3A10000%20nasa&src=typed_query&f=live)
 &nbsp; | `min_replies:100` | A minimum number of replies | [🔗](https://twitter.com/search?q=min_replies%3A1000%20nasa&src=typed_query&f=live)
-&nbsp; | `-min_retweets:500` | A maximum number of Retweets | [🔗](https://twitter.com/search?q=-min_retweets%3A500%20nasa&src=typed_query&f=live)
-&nbsp; | `-min_faves:500` | A maximum number of Likes | [🔗](https://twitter.com/search?q=-min_faves%3A500%20nasa&src=typed_query&f=live)
-&nbsp; | `-min_replies:100` | A maximum number of replies | [🔗](https://twitter.com/search?q=-min_replies%3A100%20nasa&src=typed_query&f=live)
+&nbsp; | `min_retweets:500` | A maximum number of Retweets | [🔗](https://twitter.com/search?q=-min_retweets%3A500%20nasa&src=typed_query&f=live)
+&nbsp; | `min_faves:500` | A maximum number of Likes | [🔗](https://twitter.com/search?q=-min_faves%3A500%20nasa&src=typed_query&f=live)
+&nbsp; | `min_replies:100` | A maximum number of replies | [🔗](https://twitter.com/search?q=-min_replies%3A100%20nasa&src=typed_query&f=live)
 &nbsp; | | | 
 Media | `filter:media` | All media types. | [🔗](https://twitter.com/search?q=filter%3Amedia%20cat&src=typed_query&f=live)
 &nbsp; | `filter:twimg` | Native Twitter images (`pic.twitter.com` links) | [🔗](https://twitter.com/search?q=filter%3Atwimg%20cat&src=typed_query&f=live)
