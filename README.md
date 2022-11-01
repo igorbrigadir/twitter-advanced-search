@@ -29,7 +29,7 @@ Users | `from:user` | Sent by a particular `@username` e.g. `"dogs from:NASA"` |
 &nbsp; | `@user` | Mentioning a particular `@username`. Combine with `-from:username` to get only mentions | [🔗](https://twitter.com/search?q=%40cern%20-from%3Acern&src=typed_query&f=live)
 &nbsp; | `list:108534289` <br> `list:user/list-slug` | Tweets from members of this public list. Use the list ID from the API or with urls like `https://twitter.com/i/lists/4143216`. List slug is for old list urls like `http://twitter.com/nasa/lists/astronauts`. Cannot be negated, so you can't search for "not on list". | [🔗](https://twitter.com/search?q=list%3A4143216&src=typed_query&f=live)
 &nbsp; | `filter:verified` | From verified users | [🔗](https://twitter.com/search?q=filter%3Averified&src=typed_query&f=live)
-&nbsp; | `filter:follows` | Only from accounts you follow | [🔗](https://twitter.com/search?q=filter%3Afollows%20lang%3Aen&src=typed_query&f=live)
+&nbsp; | `filter:follows` | Only from accounts you follow. Cannot be negated. | [🔗](https://twitter.com/search?q=filter%3Afollows%20lang%3Aen&src=typed_query&f=live)
 &nbsp; | `filter:social` <br> `filter:trusted` | Only from algorithmically expanded network of accounts based your own follows and activities. Works on "`Top`" results not "`Latest`" | [🔗](https://twitter.com/search?q=kitten%20filter%3Asocial&src=typed_query)
 &nbsp; | | | 
 Geo | `near:city` | Geotagged in this place. Also supports Phrases, eg: `near:"The Hague"` | [🔗](https://twitter.com/search?q=near%3A%22The%20Hague%22&src=typed_query&f=live)
@@ -112,7 +112,7 @@ Twitter is using some words as signal words. E.g. when you search for “photo�
 
 ## Building Queries:
 
-Any "`filter:type`" can also be negated using the "`-`" symbol. `exclude:links` is the same as `-filter:links`
+Most "`filter:type`" can also be negated using the "`-`" symbol, with exceptions like `filter:follows` which can't be negated. `exclude:links` is the same as `-filter:links`. It's sometimes worth trying an alias like that in case the search doesn't work first time.
 
 Example: I want Tweets from @Nasa with all types of media except images
 
