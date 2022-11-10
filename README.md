@@ -49,8 +49,8 @@ Time | `since:2021-12-31` | On or after (inclusive) a specified date. 4 digit ye
 &nbsp; | `max_id:tweet_id` | At or before (inclusive) a specified Snowflake ID (see [Note](#snowflake-ids) below) | [🔗](https://twitter.com/search?q=since_id%3A1138872932887924737%20max_id%3A1144730280353247233%20%23nasamoontunes&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `within_time:2d` <br> `within_time:3h` <br> `within_time:5m` <br> `within_time:30s` | Search within the last number of days, hours, minutes, or seconds | [🔗](https://twitter.com/search?q=nasa%20within_time%3A30s&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | | | 
-Tweet Type | `filter:nativeretweets` | Only retweets created using the retweet button. Works well combined with `from:` to show only retweets. | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Anativeretweets&src=typed_query&f=live "Last Checked: 2022-11-01") 
-&nbsp; | `include:nativeretweets` | Native retweets are excluded by default. This shows them. In contrast to `filter:`, which shows only retweets, this includes retweets in addition to other tweets | [🔗](https://twitter.com/search?q=from%3Anasa%20include%3Anativeretweets%20&src=typed_query&f=live "Last Checked: 2022-11-01") 
+Tweet Type | `filter:nativeretweets` | Only retweets created using the retweet button. Works well combined with `from:` to show only retweets. Only works within the last 7-10 days or so. | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Anativeretweets&src=typed_query&f=live "Last Checked: 2022-11-10") 
+&nbsp; | `include:nativeretweets` | Native retweets are excluded by default. This shows them. In contrast to `filter:`, which shows only retweets, this includes retweets in addition to other tweets. Only works within the last 7-10 days or so. | [🔗](https://twitter.com/search?q=from%3Anasa%20include%3Anativeretweets%20&src=typed_query&f=live "Last Checked: 2022-11-10") 
 &nbsp; | `filter:retweets` | Old style retweets ("RT") + quoted tweets. | [🔗](https://twitter.com/search?q=filter%3Aretweets%20from%3Atwitter%20until%3A2009-11-06%09&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `filter:replies` | Tweet is a reply to another Tweet. good for finding conversations, or threads if you add or remove `to:user` | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Areplies%20-to%3Anasa&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `conversation_id:tweet_id` | Tweets that are part of a thread (direct replies and other replies) | [🔗](https://twitter.com/search?q=conversation_id%3A1140437409710116865%20lang%3Aen&src=typed_query&f=live "Last Checked: 2022-11-01") 
@@ -138,6 +138,8 @@ For some queries you may want to use parameters with hyphens or spaces in it, e.
 Known limitations: `card_name:` only works for the last 7-8 days.
 
 The maximum number of operators seems to be about 22 or 23.
+
+All the Time operators have to be used in conjunction with something else to work.
 
 ### Tweetdeck Equivalents:
 
