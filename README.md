@@ -45,7 +45,7 @@ Time | `since:2021-12-31` | On or after (inclusive) a specified date. 4 digit ye
 &nbsp; | `until:2021-12-31_23:59:59_UTC` | Before (NOT inclusive) a specified date and time in the specified timezone. Combine with a "since" operator for dates between. | [🔗](https://twitter.com/search?q=%22%23NASA%22%20since%3A2022-10-13_00%3A00%3A00_UTC%20until%3A2022-10-14_00%3A02%3A00_UTC&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `since_time:1142974200` | On or after a specified unix timestamp in seconds. Combine with the "until" operator for dates between. Maybe easier to use than `since_id` below. | [🔗](https://twitter.com/search?q=since_time%3A1561720321%20until_time%3A1562198400%20%23nasamoontunes&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `until_time:1142974215` | Before a specified unix timestamp in seconds. Combine with a "since" operator for dates between. Maybe easier to use than `max_id` below. | [🔗](https://twitter.com/search?q=since_time%3A1561720321%20until_time%3A1562198400%20%23nasamoontunes&src=typed_query&f=live "Last Checked: 2022-11-01") 
-&nbsp; | `since_id:tweet_id` | After (NOT inclusive) a specified Snowflake ID | [🔗](https://twitter.com/search?q=since_id%3A1138872932887924737%20max_id%3A1144730280353247233%20%23nasamoontunes&src=typed_query&f=live "Last Checked: 2022-11-01") 
+&nbsp; | `since_id:tweet_id` | After (NOT inclusive) a specified Snowflake ID (See [Note](#snowflake-ids)) below) | [🔗](https://twitter.com/search?q=since_id%3A1138872932887924737%20max_id%3A1144730280353247233%20%23nasamoontunes&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `max_id:tweet_id` | At or before (inclusive) a specified Snowflake ID (see [Note](#snowflake-ids) below) | [🔗](https://twitter.com/search?q=since_id%3A1138872932887924737%20max_id%3A1144730280353247233%20%23nasamoontunes&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `within_time:2d` <br> `within_time:3h` <br> `within_time:5m` <br> `within_time:30s` | Search within the last number of days, hours, minutes, or seconds | [🔗](https://twitter.com/search?q=nasa%20within_time%3A30s&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | | | 
@@ -56,7 +56,7 @@ Tweet Type | `filter:nativeretweets` | Only retweets created using the retweet b
 &nbsp; | `conversation_id:tweet_id` | Tweets that are part of a thread (direct replies and other replies) | [🔗](https://twitter.com/search?q=conversation_id%3A1140437409710116865%20lang%3Aen&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `filter:quote` | Contain Quote Tweets | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Aquote&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `quoted_tweet_id:tweet_id` | Search for quotes of a specific tweet | [🔗](https://twitter.com/search?q=quoted_tweet_id%3A1138631847783608321&src=typed_query&f=live "Last Checked: 2022-11-01") 
-&nbsp; | `quoted_user_id:user_id` | Search for all quotes of a specific user | [🔗](https://twitter.com/search?q=quoted_user_id%3A11348282&src=typed_query&f=live "Last Checked: 2022-11-01") 
+&nbsp; | `quoted_user_id:user_id` | Search for all quotes of a specific user, by numeric User ID (See [Note](#snowflake-ids) below) | [🔗](https://twitter.com/search?q=quoted_user_id%3A11348282&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `card_name:poll2choice_text_only` <br> `card_name:poll3choice_text_only` <br> `card_name:poll4choice_text_only` <br> `card_name:poll2choice_image` <br> `card_name:poll3choice_image` <br> `card_name:poll4choice_image`| Tweets containing polls. For polls containing 2, 3, 4 choices, or image Polls. | [🔗](https://twitter.com/search?q=lang%3Aen%20card_name%3Apoll4choice_text_only%20OR%20card_name%3Apoll3choice_text_only%20OR%20card_name%3Apoll2choice_text_only&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | | | 
 Engagement | `filter:has_engagement` | Has some engagement (replies, likes, retweets). Can be negated to find tweets with no engagement. Note all of these are mutually exclusive with `filter:nativeretweets` or `include:nativeretweets`, as they apply to the retweet, not the original tweet, so they won't work as expected. | [🔗](https://twitter.com/search?q=breaking%20filter%3Anews%20-filter%3Ahas_engagement&src=typed_query&f=live "Last Checked: 2022-11-01") 
@@ -160,7 +160,9 @@ Web, Mobile, Tweetdeck Search runs on one type of system (as far as i can tell),
 
 All user, tweet, DM, and some other object IDs are snowflake IDs on twitter since `2010-06-01` and `2013-01-22` for user IDs. In short, each ID embeds a timestamp in it.
 
-To use these with `since_id` / `max_id` as time delimiters, either pick a tweet ID that roughly has a `created_at` time you need, remembering that all times on twitter are UTC, or use the following (This works for all tweets after Snowflake was implemented):
+An easy way to get a `user_id` from a `@user_name` is using [tweeterid.com](https://tweeterid.com/)
+
+To use Snowflake Tweet IDs with `since_id` / `max_id` as time delimiters, either pick a tweet ID that roughly has a `created_at` time you need, remembering that all times on twitter are UTC, or use the following (This works for all tweets after Snowflake was implemented):
 
 To convert a Twitter ID to millisecond epoch:
 
