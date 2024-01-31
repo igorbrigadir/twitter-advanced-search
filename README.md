@@ -81,7 +81,7 @@ Media | `filter:media` | All media types. | [🔗](https://twitter.com/search?q=
 &nbsp; | | | 
 More Filters | `filter:links` | Only containing some URL, includes media. use `-filter:media` for urls that aren't media | [🔗](https://twitter.com/search?q=filter%3Afollows%20filter%3Alinks%20-filter%3Amedia&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `filter:mentions` | Containing any sort of `@mentions` | [🔗](https://twitter.com/search?q=filter%3Amentions%20from%3Atwitter%20-filter%3Areplies&src=typed_query&f=live "Last Checked: 2022-11-01") 
-&nbsp; | `filter:news` | Containing link to a news story. Combine with a list operator to narrow the user set down further. Matches on a list of Domains (See [Note](#news-site) for full list) | [🔗](https://twitter.com/search?q=filter%3Anews%20lang%3Aen&src=typed_query&f=live "Last Checked: 2022-11-01") 
+&nbsp; | `filter:news` | Containing link to a news story. Combine with a list operator to narrow the user set down further. Matches on a list of Domains (See [Note](#news-sites) for full list) | [🔗](https://twitter.com/search?q=filter%3Anews%20lang%3Aen&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `filter:safe` | Excluding NSFW content. Excludes content that users have marked as "Potentially Sensitive". Doesn't always guarantee SFW results. | [🔗](https://twitter.com/search?q=filter%3Asafe%20%23followfriday&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `filter:hashtags` | Only Tweets with Hashtags. | [🔗](https://twitter.com/search?q=from%3Anasa%20filter%3Ahashtags&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | | | 
