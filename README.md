@@ -98,7 +98,6 @@ App specific | `source:client_name` | Sent from a specified client e.g. source:t
 &nbsp; | `card_name:promo_image_convo` <br> `card_name:promo_video_convo` | Finds [Conversational Ads](https://business.twitter.com/en/help/campaign-setup/conversational-ad-formats.html) cards. | [🔗](https://twitter.com/search?q=carp%20card_name%3Apromo_image_convo&src=typed_query&f=live "Last Checked: 2022-11-01") 
 &nbsp; | `card_name:3260518932:moment` | Finds Moments cards. `3260518932` is the user ID of `@TwitterMoments`, but the search finds moments for everyone, not that specific user. | [🔗](https://twitter.com/search?q=card_name%3A3260518932%3Amoment&src=typed_query&f=live "Last Checked: 2022-11-01") 
 
-
 ## Matching:
 
 On web and mobile, keyword operators can match on: The user's name, the @ screen name, tweet text, and shortened, as well as expanded url text (eg, `url:trib.al` finds accounts that use that shortener, even though the full url is displayed).
@@ -111,7 +110,6 @@ Private accounts are not included in the search index, and their tweets do no ap
 
 Twitter is using some words as signal words. E.g. when you search for “photo”, Twitter assumes you’re looking for Tweets with attached photos. If you want to search for Tweets which literally contain the word “photo”, you have to wrap it in double quotes `"photo"`.
 
-
 ## Building Queries:
 
 Most "`filter:type`" can also be negated using the "`-`" symbol, with exceptions like `filter:follows` which can't be negated. `exclude:links` is the same as `-filter:links`. It's sometimes worth trying an alias like that in case the search doesn't work first time.
@@ -120,11 +118,11 @@ Example: I want Tweets from @Nasa with all types of media except images
 
 `from:NASA filter:media -filter:images`
 
-Combine complex queries together with booleans and parentheses to refine your results.
+Combine complex queries together with booleans and parentheses to refine your results. Spaces are implicit logical `AND`, but `OR` must be explicitly included.
 
-Example 1: I want mentions of either "puppy" or "kitten", with mentions of either "sweet" or "cute", excluding Retweets, with at least 10 likes.
+Example 1: I want mentions of either "puppy" or "kitten", AND with mentions of either "sweet" or "cute", excluding Retweets, with at least 10 likes.
 
-`(puppy OR kitten) AND (sweet OR cute) -filter:nativeretweets min_faves:10`
+`(puppy OR kitten) (sweet OR cute) -filter:nativeretweets min_faves:10`
 
 Example 2: I want mentions of "space" and either "big" or "large" by members of the NASA astronauts List, sent from an iPhone or twitter.com, with images, excluding mentions of #asteroid, since 2011.
 
@@ -132,7 +130,7 @@ Example 2: I want mentions of "space" and either "big" or "large" by members of 
 
 To find any quote tweets, search for the tweet permalink, or the tweet ID with `url` eg: `https://twitter.com/NASA/status/1138631847783608321` or `url:1138631847783608321`, see [note](#quote-tweets) for more.
 
-For some queries you may want to use parameters with hyphens or spaces in it, e.g. `site:t-mobile.com` or `app:Twitter for iOS`. Twitter doesn’t accept hyphens or spaces in parameters and won’t display any tweets for this query. You can still search for those parameters by replacing all hyphens and spaces with underscores, e.g. `site:t_mobile.com` or `app:Twitter_for_iOS`.
+For some queries you may want to use parameters with hyphens or spaces in it, e.g. `url:t-mobile.com` or `source:Twitter for iOS`. Twitter doesn’t accept hyphens or spaces in parameters and won’t display any tweets for this query. You can still search for those parameters by replacing all hyphens and spaces with underscores, e.g. `url:t_mobile.com` or `source:Twitter_for_iOS`.
 
 ### Limitations:
 
@@ -306,7 +304,6 @@ There are also some special language codes that work. For example:
 * [`lang:qme`](https://twitter.com/search?q=lang%3Aqme&src=typed_query&f=live) for tweets with media links (works for tweets since `2022-06-14`)
 * [`lang:qst`](https://twitter.com/search?q=lang%3Aqst&src=typed_query&f=live) for tweets with a very short text (works for tweets since `2022-06-14`)
 * [`lang:zxx`](https://twitter.com/search?q=lang%3Azxx&src=typed_query&f=live) for tweets with either media or Twitter Card only, without any additional text (works for tweets since `2022-06-14`)
-
 
 ### Common clients:
 
